@@ -1,0 +1,3 @@
+[submodule "src/BreezySLAM"]
+	path = src/BreezySLAM
+	url = git@github.com:simondlevy/BreezySLAM.git
