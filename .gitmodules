@@ -1,3 +1,6 @@
 [submodule "src/BreezySLAM"]
 	path = src/BreezySLAM
 	url = git@github.com:simondlevy/BreezySLAM.git
+[submodule "src/PyRoboViz"]
+	path = src/PyRoboViz
+	url = git@github.com:simondlevy/PyRoboViz.git
