@@ -2,6 +2,8 @@ import os
 from math import floor
 from adafruit_rplidar import RPLidar
 
+# https://github.com/adafruit/Adafruit_CircuitPython_RPLIDAR
+
 
 # Setup the RPLidar
 PORT_NAME = '/dev/ttyUSB0'
