@@ -2,4 +2,4 @@
 
 git submodule update --init --recursive
 git submodule update --recursive --remote
-Install breezylsam and pyroboviz via ```sudo python3 install setup.py```
+Install breezylsam and pyroboviz via ```sudo python3 setup.py install ```
