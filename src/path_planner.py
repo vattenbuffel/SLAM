@@ -1,8 +1,18 @@
 # from tkinter import N
+from tkinter.tix import Y_REGION
 import cv2
 import numpy as np
 import tcod
 from paho.mqtt import client
+import json
+
+
+def mm_to_pixel(x, y):
+    convesion_factor = MAP_SIZE_METERS*1000 / MAP_SIZE_PIXELS
+    x = x/convesion_factor
+    y = y/convesion_factor
+    return int(x), int(y)
+
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -10,43 +20,71 @@ def on_connect(client, userdata, flags, rc):
     else:
         print("Failed to connect, return code %d\n", rc)
 
+def prepare_mapp_for_pathplan(mapp):
+    # Changes values/weights in mapp to be 0 for blocked area and very very big for other areas, to indicate cost
+    mapp[mapp<240] = 0
+    mapp[mapp != 0] = np.iinfo(np.int32).max
+
 def map_msg_received(msg):
-    # TODO: Make sure that the goal is still reachable from cur pos and with the new map
     global mapp
+    global path
+
     payload = msg.payload
     byte_array = bytearray(payload)
     mapp = np.array(byte_array, dtype=np.int32).reshape(-1, int(len(payload)**0.5))
     assert mapp.shape[0] == mapp.shape[1]
-    mapp[mapp<240] = 0
     mapp = np.flipud(mapp)
-    mapp[mapp != 0] = np.iinfo(np.int32).max
-    show_map(mapp)
+    prepare_mapp_for_pathplan(mapp)
+    cv2.imshow("Path planner", mapp.astype(np.uint8))
+    cv2.waitKey(1)
+
+    # TODO: Make sure that the goal is still reachable from cur pos and with the new map
+    if(len(path) > 0):
+        # TODO CHECK IF ANY OF THE PATH IS 0. this means it's unavailable now
+
+        p, _, _ = path_plan()
+        if(len(p) < 0):
+            path = []
+            publish_path()
+
+
+
+def publish_path():
+    client.publish("path", json.dumps(path))
 
 def pos_msg_received(msg):
     global pos
-    pos = msg.payload.decode()
+    pos = json.loads(msg.payload.decode())
 
 def goal_msg_received(msg):
     global goal
     global mapp
+    global path
 
-    map_temp = mapp.copy()
+    goal = json.loads(msg.payload.decode())
+    path, pos_cur, pos_goal = path_plan()
 
-    goal = msg.payload.decode()
-    p = pf.get_path(60, 60, 65, 65)
+    if(len(path) == 0):
+        print(f"path_planner: Failed to find a path from: {pos_cur} to {pos_goal}")
+        return
 
-    for x, y in p:
-        map_temp[x, y] = 127
+    for x, y in path:
+        mapp[x, y] = 127
 
     # cv2.imwrite("astar.png", mapp)
-    show_map(map_temp)
-
-    client.publish("path", p)
-
-
-def show_map(mapp):
-    cv2.imshow("Path planner", mapp.astype(np.uint8))
+    cv2.imshow("Path planner with path", mapp.astype(np.uint8))
     cv2.waitKey(1)
+    publish_path()
+
+def path_plan():
+    x_cur, y_cur = mm_to_pixel(pos[0], pos[1])
+    x_goal, y_goal = mm_to_pixel(goal[0], goal[1])
+
+    pf = tcod.path.AStar(mapp, 0)
+    p = pf.get_path(y_cur, x_cur, y_goal, x_goal)# x and y are in this order because rows are first in matrices
+
+    return p, (x_cur, y_cur), (x_goal, y_goal)
+
 
 
 def subscribe(client):
@@ -63,23 +101,22 @@ def subscribe(client):
             pos_msg_received(msg)
         elif msg.topic == "goal":
             goal_msg_received(msg)
-        else:
-            raise Exception(f"Invalid topic: {msg.topic}")
         
 
     client.subscribe("map")
     client.subscribe("goal")
-    client.subscribe("cur_pos")
+    client.subscribe("pos")
     client.on_message = on_message
 
 
 mapp = np.array([1], dtype=np.int32).reshape(1,1)
-map_path = None
 pos = None
-path = None
+path = []
 goal = None
 
-pf = tcod.path.AStar(mapp, 0)
+MAP_SIZE_PIXELS         = 500 # GET THESE FROM CONFIG FILE
+MAP_SIZE_METERS         = 5 # GET THESE FROM CONFIG FILE
+
 
 
 client = client.Client("path_planner")

@@ -1,4 +1,4 @@
-MAP_SIZE_PIXELS         = 100
+MAP_SIZE_PIXELS         = 500
 MAP_SIZE_METERS         = 5
 LIDAR_DEVICE            = '/dev/ttyUSB0'
 
