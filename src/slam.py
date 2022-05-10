@@ -1,7 +1,4 @@
-MAP_SIZE_PIXELS         = 500
-MAP_SIZE_METERS         = 5
 LIDAR_DEVICE            = '/dev/ttyUSB0'
-
 
 # Ideally we could use all 250 or so samples that the RPLidar delivers in one 
 # scan, but on slower computers you'll get an empty map and unchanging position
@@ -11,10 +8,10 @@ MIN_SAMPLES   = 150
 from breezyslam.algorithms import RMHC_SLAM
 from breezyslam.sensors import RPLidarA1 as LaserModel
 from adafruit_rplidar import RPLidar as Lidar
-from roboviz import MapVisualizer
 import os
 from paho.mqtt import client
 import json
+import config
 
 if __name__ == '__main__':
     def on_connect(client, userdata, flags, rc):
@@ -24,7 +21,7 @@ if __name__ == '__main__':
             print("Failed to connect, return code %d\n", rc)
     client = client.Client("slam")
     client.on_connect = on_connect
-    client.connect("localhost")
+    client.connect(config.mqtt_broker)
 
     def publish_data(map, pos):
         client.publish("map", map)
@@ -32,17 +29,13 @@ if __name__ == '__main__':
 
 
     # Create an RMHC SLAM object with a laser model and optional robot model
-    slam = RMHC_SLAM(LaserModel(), MAP_SIZE_PIXELS, MAP_SIZE_METERS)
-
-    # Set up a SLAM display
-    viz = MapVisualizer(MAP_SIZE_PIXELS, MAP_SIZE_METERS, 'SLAM')
+    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m)
 
     # Initialize an empty trajectory
     trajectory = []
 
     # Initialize empty map
-    mapbytes = bytearray(MAP_SIZE_PIXELS * MAP_SIZE_PIXELS)
-
+    mapbytes = bytearray(config.map_size_pixels * config.map_size_pixels)
 
     print("slam started")
     while True:
@@ -86,11 +79,6 @@ if __name__ == '__main__':
 
         # Get current map bytes as grayscale
         slam.getmap(mapbytes)
-
-        # Display map and robot pose, exiting gracefully if user closes it
-        if not viz.display(x/1000., y/1000., theta, mapbytes):
-            exit(0)
-
         publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
 
     # Shut down the lidar connection

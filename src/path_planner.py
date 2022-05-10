@@ -1,14 +1,14 @@
 # from tkinter import N
-from tkinter.tix import Y_REGION
 import cv2
 import numpy as np
 import tcod
 from paho.mqtt import client
 import json
+import config
 
 
 def mm_to_pixel(x, y):
-    convesion_factor = MAP_SIZE_METERS*1000 / MAP_SIZE_PIXELS
+    convesion_factor = config.map_size_m*1000 / config.map_size_pixels
     x = x/convesion_factor
     y = y/convesion_factor
     return int(x), int(y)
@@ -39,13 +39,12 @@ def map_msg_received(msg):
     cv2.waitKey(1)
 
     # TODO: Make sure that the goal is still reachable from cur pos and with the new map
-    if(len(path) > 0):
-        # TODO CHECK IF ANY OF THE PATH IS 0. this means it's unavailable now
-
-        p, _, _ = path_plan()
-        if(len(p) < 0):
-            path = []
-            publish_path()
+    # if(len(path) > 0):
+    #     # TODO CHECK IF ANY OF THE PATH IS 0. this means it's unavailable now
+    #     p, _, _ = path_plan()
+    #     if(len(p) < 0):
+    #         path = []
+    #         publish_path()
 
 
 
@@ -85,14 +84,8 @@ def path_plan():
 
     return p, (x_cur, y_cur), (x_goal, y_goal)
 
-
-
 def subscribe(client):
     def on_message(client, userdata, msg):
-        global pos
-        global goal
-        global path
-
         # print(f"Received `{msg.payload}` from `{msg.topic}` topic")
 
         if msg.topic == "map":
@@ -114,15 +107,10 @@ pos = None
 path = []
 goal = None
 
-MAP_SIZE_PIXELS         = 500 # GET THESE FROM CONFIG FILE
-MAP_SIZE_METERS         = 5 # GET THESE FROM CONFIG FILE
-
-
 
 client = client.Client("path_planner")
 client.on_connect = on_connect
-# client.connect("192.168.1.11")
-client.connect("localhost")
+client.connect(config.mqtt_broker)
 
 subscribe(client)
 print("path planner started")

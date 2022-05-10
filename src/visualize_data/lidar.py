@@ -16,7 +16,7 @@ def on_connect(client, userdata, flags, rc):
         print("Failed to connect, return code %d\n", rc)
 client = client.Client("Rpi4")
 client.on_connect = on_connect
-client.connect("localhost")
+client.connect(config.mqtt_broker)
 
 
 def process_data(data):
