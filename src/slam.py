@@ -12,6 +12,7 @@ import os
 from paho.mqtt import client
 import json
 import config
+import time
 
 if __name__ == '__main__':
     def on_connect(client, userdata, flags, rc):
@@ -37,6 +38,9 @@ if __name__ == '__main__':
     # Initialize empty map
     mapbytes = bytearray(config.map_size_pixels * config.map_size_pixels)
 
+    n = 0
+    time_start = time.time()
+
     print("slam started")
     while True:
         try:
@@ -57,12 +61,21 @@ if __name__ == '__main__':
             print(f"exception {e} happend")
 
     while True:
+        n += 1
+        if n%25 == 0:
+            print(f"slam frequency: {n/(time.time()-time_start)} hz")
+            time_start = time.time()
+            n = 0
+
+
         # Extract (quality, angle, distance) triples from current scan
         items = [item for item in next(iterator)]
 
         # Extract distances and angles from triples
         distances = [item[2] for item in items]
         angles    = [360-item[1] for item in items]
+        if n % 10 == 0:
+            print(f"Got: {len(angles)} lidar measurements samples")
 
         # Update SLAM with current Lidar scan and scan angles if adequate
         if len(distances) > MIN_SAMPLES:
