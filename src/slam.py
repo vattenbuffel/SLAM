@@ -74,8 +74,6 @@ if __name__ == '__main__':
         # Extract distances and angles from triples
         distances = [item[2] for item in items]
         angles    = [360-item[1] for item in items]
-        if n % 10 == 0:
-            print(f"Got: {len(angles)} lidar measurements samples")
 
         # Update SLAM with current Lidar scan and scan angles if adequate
         if len(distances) > MIN_SAMPLES:
@@ -85,6 +83,7 @@ if __name__ == '__main__':
 
         # If not adequate, use previous
         elif previous_distances is not None:
+            print(f"Warning too few lidar samples: {len(angles)}")
             slam.update(previous_distances, scan_angles_degrees=previous_angles)
 
         # Get current robot position
