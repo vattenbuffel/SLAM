@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
     n = 0
     time_start = time.time()
+    last_pub_t_s = time.time()
 
     print("slam started")
     while True:
@@ -86,12 +87,13 @@ if __name__ == '__main__':
             print(f"Warning too few lidar samples: {len(angles)}")
             slam.update(previous_distances, scan_angles_degrees=previous_angles)
 
-        # Get current robot position
-        x, y, theta = slam.getpos()
+            if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
+                # Get current robot position
+                x, y, theta = slam.getpos()
 
-        # Get current map bytes as grayscale
-        slam.getmap(mapbytes)
-        publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
+                # Get current map bytes as grayscale
+                slam.getmap(mapbytes)
+                publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
 
     # Shut down the lidar connection
     lidar.stop()
