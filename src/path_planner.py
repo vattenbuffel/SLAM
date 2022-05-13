@@ -1,10 +1,12 @@
-# from tkinter import N
 import cv2
 import numpy as np
 import tcod
 from paho.mqtt import client
 import json
 import config
+import time
+
+# This should broad cast it's calculatd path on mqtt
 
 
 def mm_to_pixel(x, y):
@@ -28,6 +30,14 @@ def prepare_mapp_for_pathplan(mapp):
 def map_msg_received(msg):
     global mapp
     global path
+    global n
+    global time_start
+
+
+    if n%25 == 0:
+        print(f"Map received frequency: {n/(time.time()-time_start)} hz")
+        time_start = time.time()
+        n = 0
 
     payload = msg.payload
     byte_array = bytearray(payload)
@@ -35,8 +45,8 @@ def map_msg_received(msg):
     assert mapp.shape[0] == mapp.shape[1]
     mapp = np.flipud(mapp)
     prepare_mapp_for_pathplan(mapp)
-    cv2.imshow("Path planner", mapp.astype(np.uint8))
-    cv2.waitKey(1)
+    # cv2.imshow("Path planner", mapp.astype(np.uint8))
+    # cv2.waitKey(1)
 
     # TODO: Make sure that the goal is still reachable from cur pos and with the new map
     # if(len(path) > 0):
@@ -71,8 +81,8 @@ def goal_msg_received(msg):
         mapp[x, y] = 127
 
     # cv2.imwrite("astar.png", mapp)
-    cv2.imshow("Path planner with path", mapp.astype(np.uint8))
-    cv2.waitKey(1)
+    # cv2.imshow("Path planner with path", mapp.astype(np.uint8))
+    # cv2.waitKey(1)
     publish_path()
 
 def path_plan():
@@ -106,6 +116,9 @@ mapp = np.array([1], dtype=np.int32).reshape(1,1)
 pos = None
 path = []
 goal = None
+
+n = 0
+time_start = time.time()
 
 
 client = client.Client("path_planner")
