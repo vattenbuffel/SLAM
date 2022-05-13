@@ -6,7 +6,7 @@ import json
 import config
 import time
 
-# This should broad cast it's calculatd path on mqtt
+# This should broadcast it's calculatd path on mqtt
 
 
 def mm_to_pixel(x, y):
@@ -45,8 +45,10 @@ def map_msg_received(msg):
     assert mapp.shape[0] == mapp.shape[1]
     mapp = np.flipud(mapp)
     prepare_mapp_for_pathplan(mapp)
-    # cv2.imshow("Path planner", mapp.astype(np.uint8))
-    # cv2.waitKey(1)
+    
+    if show_img:
+        cv2.imshow("Path planner", mapp.astype(np.uint8))
+        cv2.waitKey(1)
 
     # TODO: Make sure that the goal is still reachable from cur pos and with the new map
     # if(len(path) > 0):
@@ -80,9 +82,10 @@ def goal_msg_received(msg):
     for x, y in path:
         mapp[x, y] = 127
 
-    # cv2.imwrite("astar.png", mapp)
-    # cv2.imshow("Path planner with path", mapp.astype(np.uint8))
-    # cv2.waitKey(1)
+    if show_img:
+        cv2.imshow("Path planner with path", mapp.astype(np.uint8))
+        cv2.waitKey(1)
+
     publish_path()
 
 def path_plan():
@@ -120,6 +123,15 @@ goal = None
 n = 0
 time_start = time.time()
 
+# Figure out if images can be shown or not
+show_img = False
+try:
+    img = cv2.imread("pp_start.png")
+    cv2.imshow("Start image", img)
+    cv2.waitkey(1000)
+
+except Exception as e:
+    print(f"Can't show images. Starting in headless mode")
 
 client = client.Client("path_planner")
 client.on_connect = on_connect
