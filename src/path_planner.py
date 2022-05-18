@@ -126,9 +126,10 @@ time_start = time.time()
 # Figure out if images can be shown or not
 show_img = False
 try:
-    img = cv2.imread("pp_start.png")
+    img = cv2.imread("imgs/pp_start.png")
     cv2.imshow("Start image", img)
-    cv2.waitkey(1000)
+    cv2.waitKey(1000)
+    print(f"Can show images. Starting in head mode")
 
 except Exception as e:
     print(f"Can't show images. Starting in headless mode")
