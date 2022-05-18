@@ -46,7 +46,7 @@ def open_serial():
                 continue
 
             os.system(f"sudo chmod 666 {p}")
-            ser = serial.Serial(p, 115200, timeout=3)
+            ser = serial.Serial(p, 115200, timeout=1)
             time.sleep(3)
             ser.write(b'?')
             data = ser.read_until(b'<esp>')
@@ -93,6 +93,7 @@ while True:
         print(f"right: {encoder_right}, left: {encoder_left}")
 
     client.publish("encoders", json.dumps([encoder_right, encoder_left]))
+    client.loop()
 
 
 
