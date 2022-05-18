@@ -17,6 +17,8 @@
 
 #define REPORT_FREQ_MS 100
 
+#define CMD_LEN 3
+
 // TODO: Set in1,2,3,4 based on what direction the speed should go
 
 // Data is sent to esp as a byte representing speed percent. 200 is full speed ahead, 100 is stationry and -50 is 50 % speed backwards.
@@ -51,22 +53,45 @@ static void motor_off(int gpio1, int gpio2){
 	digitalWrite(gpio2, LOW);
 }
 
+void write_data_in_bytes(uint32_t val){
+	static uint8_t byte;
+	static int i = 0;
+	for (i = 0; i < 4; i++) {
+		byte = val >> i*8;
+		Serial.write(byte);
+	}
+
+}
+
 void report(){
 	static uint32_t t_first = millis();
 
 	// Report current encoder values
 	if (millis() - t_first > REPORT_FREQ_MS){
-		Serial.write(encoder_right);
-		Serial.write(encoder_left);
+		Serial.write('#');
+		write_data_in_bytes(encoder_right);
+		write_data_in_bytes(encoder_left);
+		
 		t_first = millis();
 	}
 }
 
 void cmd_handle(){
-	static uint8_t buf[2];
+	static uint8_t buf[CMD_LEN];
+	static char c;
 
-	if(Serial.available() >= 2){
-		Serial.readBytes(buf, 2);
+	if (Serial.available() == 0){
+		return;
+	}
+
+	c = Serial.peek();
+
+	if (c == '?'){
+		Serial.write("esp");
+		Serial.read();
+	} else if (c == '!'){
+		Serial.readBytes(buf, CMD_LEN);
+		Serial.println("Done waiting for ! command\n");
 
 		if(buf[0] == 0) {
 			motor_off(IN1, IN2);
@@ -85,12 +110,27 @@ void cmd_handle(){
 			motor_rev(IN3, IN4);
 		}
 		ledcWrite(ENB_PWM_CHANNEL, map(buf[1] >= 100 ? buf[1]-100 : buf[1], 0, 100, 0, 255));
+			
+	} else{
+		int bytes_available = Serial.available();
+		char tmp[bytes_available + 1];
+		tmp[bytes_available] = '\0';
 		
+		Serial.readBytes(tmp, bytes_available);
+		Serial.print("Invalid command received: ");
+		Serial.println(tmp);
+
+		while(Serial.available() > 0){
+			c = Serial.read();
+		}
 	}
 }
 
 void setup() {
 	Serial.begin(115200);
+	while(Serial.available() > 0){
+		Serial.read();
+	}
 	Serial.println("hello world\n");
 
 	pinMode(ENCODER_LEFT_A, INPUT_PULLUP);

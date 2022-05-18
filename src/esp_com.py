@@ -5,6 +5,7 @@ from datetime import datetime
 import config
 import serial
 import serial.tools.list_ports
+import os
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -38,20 +39,24 @@ def subscribe(client):
 
 
 def open_serial():
-    for p in [comport.device for comport in serial.tools.list_ports.comports()]:
-        if '/dev/ttyUSB' not in p:
-            continue
+    while True:
+        for p in [comport.device for comport in serial.tools.list_ports.comports()]:
+            if '/dev/ttyUSB' not in p:
+                continue
 
-        ser = serial.Serial(p, 115200, timeout=10)
-        ser.write(b'?')
-        data = ser.read_until(b'esp')
-        if not b'esp' in data:
-            continue
-        
-        return ser
+            os.system(f"sudo chmod 666 {p}")
+            ser = serial.Serial(p, 115200, timeout=1)
+            time.sleep(3)
+            # ser.write(b'?')
+            # data = ser.read_until(b'esp')
+            # print(data)
+            # if not b'esp' in data:
+            #     continue
+            
+            return ser
 
+        print("Failed to find an esp. Please restart esp")
 
-    raise Exception("No esp was found")
 
 def vel_to_esp(vel_r, vel_l):
     ser.write(b'!')
@@ -71,10 +76,12 @@ subscribe(client)
 print("Esp communicator started")
 
 while True:
+    ser.read_until(b'#')
     d = ser.read(8) # Read two uint_32
+    encoder_right = int.from_bytes(d[:4], "little")
+    encoder_left = int.from_bytes(d[4:], "little")
 
-    enc_r = 5
-    client.publish("encoder", "hej")
+    print(f"right: {encoder_right}, left: {encoder_left}")
 
 # client.loop_forever()
 
