@@ -3,7 +3,7 @@
 #define ENCODER_LEFT_A 33
 #define ENCODER_LEFT_B 14
 #define ENCODER_RIGHT_A 13
-#define ENCODER_RIGHT_B 11
+#define ENCODER_RIGHT_B 15
 
 #define ENA 25
 #define ENB 26
@@ -42,6 +42,11 @@ void setup() {
 	attachInterrupt(ENCODER_LEFT_A, encoder_left_int, CHANGE);
 	pinMode(ENCODER_LEFT_B, INPUT_PULLUP);
 	attachInterrupt(ENCODER_LEFT_B, encoder_left_int, CHANGE);
+
+	pinMode(ENCODER_RIGHT_A, INPUT_PULLUP);
+	attachInterrupt(ENCODER_RIGHT_A, encoder_right_int, CHANGE);
+	pinMode(ENCODER_RIGHT_B, INPUT_PULLUP);
+	attachInterrupt(ENCODER_RIGHT_B, encoder_right_int, CHANGE);
 }
 
 void loop() {

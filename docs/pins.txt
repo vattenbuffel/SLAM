@@ -1,7 +1,7 @@
 left motor encoder A: GPIO33
 left motor encoder B: GPIO14
 right motor encoder A: GPIO13
-right motor encoder B: GPIO11
+right motor encoder B: GPIO15
 
 ENA: GPIO25
 ENB: GPIO26
