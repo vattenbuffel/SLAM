@@ -14,7 +14,14 @@ import json
 import config
 import time
 from datetime import datetime
-from roboviz import MapVisualizer
+
+headless = False
+try:
+    from roboviz import MapVisualizer
+    print(f"Starting in not headless mode")
+except Exception as e:
+    headless = True
+    print(f"Starting in headless mode")
 
 if __name__ == '__main__':
     def on_connect(client, userdata, flags, rc):
@@ -33,7 +40,8 @@ if __name__ == '__main__':
 
     # Create an RMHC SLAM object with a laser model and optional robot model
     slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m)
-    viz = MapVisualizer(config.map_size_pixels, config.map_size_m, 'SLAM')
+    if not headless:
+        viz = MapVisualizer(config.map_size_pixels, config.map_size_m, 'SLAM')
 
     # Initialize an empty trajectory
     trajectory = []
@@ -102,8 +110,9 @@ if __name__ == '__main__':
             last_pub_t_s = time.time()
 
         # Display map and robot pose, exiting gracefully if user closes it
-        if not viz.display(x/1000., y/1000., theta, mapbytes):
-            exit(0)
+        if not headless:
+            if not viz.display(x/1000., y/1000., theta, mapbytes):
+                exit(0)
 
 
 
