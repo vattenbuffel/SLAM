@@ -1,0 +1,11 @@
+left motor encoder A: GPIO33
+left motor encoder B: GPIO14
+right motor encoder A: GPIO13
+right motor encoder B: GPIO15
+
+ENA: GPIO25
+ENB: GPIO26
+IN1: GPIO32
+IN2: GPIO35
+IN3: GPIO34
+IN4: GPIO39
