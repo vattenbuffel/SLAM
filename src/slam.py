@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
 
     # Create an RMHC SLAM object with a laser model and optional robot model
-    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m)
+    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=5, max_search_iter=10000)
     if not headless:
         viz = MapVisualizer(config.map_size_pixels, config.map_size_m, 'SLAM')
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
 
         # Update SLAM with current Lidar scan and scan angles if adequate
         if len(distances) > MIN_SAMPLES:
-            slam.update(distances, scan_angles_degrees=angles)
+            slam.update(distances, scan_angles_degrees=angles) # here, feed in pose change
             previous_distances = distances.copy()
             previous_angles    = angles.copy()
 
