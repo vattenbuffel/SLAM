@@ -6,6 +6,7 @@ import config
 import serial
 import serial.tools.list_ports
 import os
+import json
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -45,13 +46,13 @@ def open_serial():
                 continue
 
             os.system(f"sudo chmod 666 {p}")
-            ser = serial.Serial(p, 115200, timeout=1)
+            ser = serial.Serial(p, 115200, timeout=3)
             time.sleep(3)
-            # ser.write(b'?')
-            # data = ser.read_until(b'esp')
-            # print(data)
-            # if not b'esp' in data:
-            #     continue
+            ser.write(b'?')
+            data = ser.read_until(b'<esp>')
+            print(data)
+            if not b'esp' in data:
+                continue
             
             return ser
 
@@ -65,25 +66,34 @@ def vel_to_esp(vel_r, vel_l):
 
 
 n = 0
+nn = 0
 time_start = time.time()
+time_startt = time.time()
 ser = open_serial()
 
 client = client.Client("esp_com")
 client.on_connect = on_connect
 client.connect(config.mqtt_broker)
-
 subscribe(client)
+
 print("Esp communicator started")
 
 while True:
     ser.read_until(b'#')
+    # print(f"In waiting: {ser.in_waiting}")
     d = ser.read(8) # Read two uint_32
     encoder_right = int.from_bytes(d[:4], "little")
     encoder_left = int.from_bytes(d[4:], "little")
 
-    print(f"right: {encoder_right}, left: {encoder_left}")
+    nn += 1
+    if nn%250 == 0:
+        print(f"{datetime.now().strftime('%H:%M:%S')}: encoder recive frequency: {nn/(time.time()-time_startt)} hz")
+        time_startt = time.time()
+        nn = 0
+        print(f"right: {encoder_right}, left: {encoder_left}")
 
-# client.loop_forever()
+    client.publish("encoders", json.dumps([encoder_right, encoder_left]))
+
 
 
 

@@ -15,7 +15,7 @@
 #define IN3 32
 #define IN4 32
 
-#define REPORT_FREQ_MS 100
+#define REPORT_FREQ_MS 5
 
 #define CMD_LEN 3
 
@@ -87,11 +87,10 @@ void cmd_handle(){
 	c = Serial.peek();
 
 	if (c == '?'){
-		Serial.write("esp");
+		Serial.write("<esp>");
 		Serial.read();
 	} else if (c == '!'){
 		Serial.readBytes(buf, CMD_LEN);
-		Serial.println("Done waiting for ! command\n");
 
 		if(buf[0] == 0) {
 			motor_off(IN1, IN2);
