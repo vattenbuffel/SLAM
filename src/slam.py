@@ -13,6 +13,7 @@ from paho.mqtt import client
 import json
 import config
 import time
+from datetime import datetime
 
 if __name__ == '__main__':
     def on_connect(client, userdata, flags, rc):
@@ -64,7 +65,7 @@ if __name__ == '__main__':
     while True:
         n += 1
         if n%25 == 0:
-            print(f"slam frequency: {n/(time.time()-time_start)} hz")
+            print(f"{datetime.now().strftime('%H:%M:%S')}: Slam frequency: {n/(time.time()-time_start)} hz")
             time_start = time.time()
             n = 0
 
@@ -87,13 +88,15 @@ if __name__ == '__main__':
             print(f"Warning too few lidar samples: {len(angles)}")
             slam.update(previous_distances, scan_angles_degrees=previous_angles)
 
-            if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
-                # Get current robot position
-                x, y, theta = slam.getpos()
+        if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
+            # Get current robot position
+            x, y, theta = slam.getpos()
 
-                # Get current map bytes as grayscale
-                slam.getmap(mapbytes)
-                publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
+            # Get current map bytes as grayscale
+            slam.getmap(mapbytes)
+            publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
+
+            last_pub_t_s = time.time()
 
     # Shut down the lidar connection
     lidar.stop()

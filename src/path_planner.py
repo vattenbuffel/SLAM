@@ -5,6 +5,7 @@ from paho.mqtt import client
 import json
 import config
 import time
+from datetime import datetime
 
 # This should broadcast it's calculatd path on mqtt
 
@@ -33,9 +34,9 @@ def map_msg_received(msg):
     global n
     global time_start
 
-
-    if n%25 == 0:
-        print(f"Map received frequency: {n/(time.time()-time_start)} hz")
+    n+=1
+    if n%10 == 0:
+        print(f"{datetime.now().strftime('%H:%M:%S')}: Map received frequency: {n/(time.time()-time_start)} hz")
         time_start = time.time()
         n = 0
 
@@ -125,8 +126,8 @@ time_start = time.time()
 
 # Figure out if images can be shown or not
 show_img = False
+img = cv2.imread("pp_start.png")
 try:
-    img = cv2.imread("pp_start.png")
     cv2.imshow("Start image", img)
     cv2.waitkey(1000)
 
