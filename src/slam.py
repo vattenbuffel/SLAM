@@ -14,6 +14,7 @@ import json
 import config
 import time
 from datetime import datetime
+from roboviz import MapVisualizer
 
 if __name__ == '__main__':
     def on_connect(client, userdata, flags, rc):
@@ -32,6 +33,7 @@ if __name__ == '__main__':
 
     # Create an RMHC SLAM object with a laser model and optional robot model
     slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m)
+    viz = MapVisualizer(config.map_size_pixels, config.map_size_m, 'SLAM')
 
     # Initialize an empty trajectory
     trajectory = []
@@ -88,6 +90,7 @@ if __name__ == '__main__':
             print(f"Warning too few lidar samples: {len(angles)}")
             slam.update(previous_distances, scan_angles_degrees=previous_angles)
 
+        # Publish
         if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
             # Get current robot position
             x, y, theta = slam.getpos()
@@ -97,6 +100,12 @@ if __name__ == '__main__':
             publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
 
             last_pub_t_s = time.time()
+
+        # Display map and robot pose, exiting gracefully if user closes it
+        if not viz.display(x/1000., y/1000., theta, mapbytes):
+            exit(0)
+
+
 
     # Shut down the lidar connection
     lidar.stop()
