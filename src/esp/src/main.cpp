@@ -15,7 +15,7 @@
 #define IN3 21
 #define IN4 19
 
-#define REPORT_FREQ_MS 5
+#define REPORT_FREQ_MS 25
 
 #define CMD_LEN 3
 
