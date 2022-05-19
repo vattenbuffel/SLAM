@@ -36,7 +36,8 @@ def open_serial():
         for p in [comport.device for comport in serial.tools.list_ports.comports()]:
             if '/dev/ttyUSB' not in p:
                 continue
-
+            
+            p = '/dev/ttyUSB0'
             os.system(f"sudo chmod 666 {p}")
             ser = serial.Serial(p, 115200, timeout=1)
             time.sleep(3)
@@ -87,6 +88,7 @@ while True:
     # d = ser.readline()
     # print(d)
     client.loop()
+    time.sleep(0.0001)
 
 
 
