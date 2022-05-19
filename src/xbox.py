@@ -73,6 +73,7 @@ left_motor = Motor()
 client = client.Client("xbox")
 client.on_connect = on_connect
 client.connect(config.mqtt_broker)
+client.loop_start()
 
 print("Xbox input started")
 
@@ -85,5 +86,3 @@ while True:
             left_motor = Motor()
 
         output(inputs)
-
-    client.loop()

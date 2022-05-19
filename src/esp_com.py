@@ -37,7 +37,7 @@ def open_serial():
             if '/dev/ttyUSB' not in p:
                 continue
             
-            p = '/dev/ttyUSB1'
+            p = '/dev/ttyUSB0'
             os.system(f"sudo chmod 666 {p}")
             ser = serial.Serial(p, 115200, timeout=1)
             time.sleep(3)
@@ -75,7 +75,7 @@ while True:
     encoder_left = int.from_bytes(d[4:], "little")
 
     nn += 1
-    if nn%250 == 0:
+    if nn%100 == 0:
         print(f"{datetime.now().strftime('%H:%M:%S')}: encoder recive frequency: {nn/(time.time()-time_startt)} hz")
         time_startt = time.time()
         nn = 0
