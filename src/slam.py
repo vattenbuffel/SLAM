@@ -91,6 +91,9 @@ if __name__ == '__main__':
         distances = [item[2] for item in items]
         angles    = [360-item[1] for item in items]
 
+        # Publish lidar data
+        client.publish("lidar_data", json.dumps((distances, angles)))
+
         # Update SLAM with current Lidar scan and scan angles if adequate
         if len(distances) > MIN_SAMPLES:
             slam.update(distances, scan_angles_degrees=angles) # here, feed in pose change
