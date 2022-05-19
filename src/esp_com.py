@@ -37,7 +37,7 @@ def open_serial():
             if '/dev/ttyUSB' not in p:
                 continue
             
-            p = '/dev/ttyUSB0'
+            p = '/dev/ttyUSB1'
             os.system(f"sudo chmod 666 {p}")
             ser = serial.Serial(p, 115200, timeout=1)
             time.sleep(3)

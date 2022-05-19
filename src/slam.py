@@ -30,7 +30,7 @@ def create_lidar():
             for _ in range(3):
                 try:
                     # device_path = f"/dev/ttyUSB{i}"
-                    device_path = f"/dev/ttyUSB1"
+                    device_path = f"/dev/ttyUSB0"
                     os.system(f"sudo chmod 666 {device_path}")
                     lidar = Lidar(None, device_path, timeout=3)
                     # Create an iterator to collect scan data from the RPLidar
@@ -112,7 +112,8 @@ if __name__ == '__main__':
 
         # Extract distances and angles from triples
         distances = [item[2] for item in items]
-        angles    = [360-item[1] for item in items]
+        # angles    = [360-item[1] for item in items]
+        angles    = [0-item[1] for item in items]
 
         # Publish lidar data
         client.publish("lidar_data", json.dumps((distances, angles)))
