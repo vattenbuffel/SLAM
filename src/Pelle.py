@@ -5,20 +5,20 @@ class Pelle(WheeledVehicle):
     def __init__(self):
         WheeledVehicle.__init__(self, 51, 90)
         
-        self.ticks_per_cycle = 642# Double check this
+        self.ticks_per_cycle = 1248
                         
     def __str__(self):
         
         return '<%s ticks_per_cycle=%d>' % (WheeledVehicle.__str__(self), self.ticks_per_cycle)
         
-    def computePoseChange(self, right_wheel, left_wheel):
+    def computePoseChange(self, left_wheel, right_wheel):
         
         return WheeledVehicle.computePoseChange(self, time.time(), left_wheel, right_wheel)
 
     def extractOdometry(self, timestamp, leftWheel, rightWheel):
                 
         # Convert microseconds to seconds, ticks to angles        
-        return timestamp / 1e6, \
+        return timestamp, \
                self._ticks_to_degrees(leftWheel), \
                self._ticks_to_degrees(rightWheel)
                
@@ -29,5 +29,5 @@ class Pelle(WheeledVehicle):
                
     def _ticks_to_degrees(self, ticks):
         
-        return ticks * (180. / self.ticks_per_cycle)
+        return ticks * (360. / self.ticks_per_cycle)
         
