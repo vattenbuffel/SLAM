@@ -6,9 +6,9 @@
 #define ENCODER_RIGHT_B 15
 
 #define ENA 25
-#define ENA_PWM_CHANNEL 0
+#define ENA_PWM_CHANNEL 1
 #define ENB 26
-#define ENB_PWM_CHANNEL 1
+#define ENB_PWM_CHANNEL 0
 
 #define IN1 32
 #define IN2 32
@@ -21,7 +21,7 @@
 
 // TODO: Set in1,2,3,4 based on what direction the speed should go
 
-// Data is sent to esp as a byte representing speed percent. 200 is full speed ahead, 100 is stationry and -50 is 50 % speed backwards.
+// Data is sent to esp as a byte representing speed percent. 200 is full speed ahead, 100 is stationry and -50 is 50 % speed backwards, -70 is 70 % speed backwards.
 
 // TODO: See how long it takes to write data to serial and see if it can be done at 100 hz while keeping rest of code at 1 khz
 
@@ -79,45 +79,62 @@ void report(){
 void cmd_handle(){
 	static uint8_t buf[CMD_LEN];
 	static char c;
+	static int cnt;
+	// Serial.print("serial.available: ");
+	// Serial.println(Serial.available());
 
 	if (Serial.available() == 0){
 		return;
 	}
 
 	c = Serial.peek();
+	Serial.printf("serial.available: %d, serial.peek(): %d, '%c'\n", Serial.available(), c, c);
 
 	if (c == '?'){
 		Serial.write("<esp>");
 		Serial.read();
 	} else if (c == '!'){
-		Serial.readBytes(buf, CMD_LEN);
-
-		if(buf[0] == 0) {
-			motor_off(IN1, IN2);
-		} else if(buf[0] > 100){
-			motor_for(IN1, IN2);
-		}else if(buf[0] < 100){
-			motor_rev(IN1, IN2);
+		cnt = Serial.readBytes(buf, CMD_LEN);
+		if(cnt != CMD_LEN){
+			Serial.print("Invalid command. Expected ");
+			Serial.print(CMD_LEN);
+			Serial.print(" bytes. Received: ");
+			Serial.println(cnt);
 		}
-		ledcWrite(ENA_PWM_CHANNEL, map(buf[0] >= 100 ? buf[0]-100 : buf[0], 0, 100, 0, 255));
 
 		if(buf[1] == 0) {
-			motor_off(IN3, IN4);
+			motor_off(IN1, IN2);
 		} else if(buf[1] > 100){
-			motor_for(IN3, IN4);
+			motor_for(IN1, IN2);
 		}else if(buf[1] < 100){
+			motor_rev(IN1, IN2);
+		}
+		ledcWrite(ENA_PWM_CHANNEL, map(buf[1] >= 100 ? buf[1]-100 : buf[1], 0, 100, 0, 255));
+
+		if(buf[2] == 0) {
+			motor_off(IN3, IN4);
+		} else if(buf[2] > 100){
+			motor_for(IN3, IN4);
+		}else if(buf[2] < 100){
 			motor_rev(IN3, IN4);
 		}
-		ledcWrite(ENB_PWM_CHANNEL, map(buf[1] >= 100 ? buf[1]-100 : buf[1], 0, 100, 0, 255));
+		ledcWrite(ENB_PWM_CHANNEL, map(buf[2] >= 100 ? buf[2]-100 : buf[2], 0, 100, 0, 255));
+		Serial.print("received: !. right_vel: ");
+		Serial.print(buf[1]);
+		Serial.print(". left_vel: ");
+		Serial.println(buf[2]);
+
 			
 	} else{
 		int bytes_available = Serial.available();
 		char tmp[bytes_available + 1];
 		tmp[bytes_available] = '\0';
 		
-		Serial.readBytes(tmp, bytes_available);
-		Serial.print("Invalid command received: ");
-		Serial.println(tmp);
+		int read_b = Serial.readBytes(tmp, bytes_available);
+		Serial.print("Invalid command received: \"");
+		Serial.print(tmp);
+		Serial.print("\", bytes: ");
+		Serial.println(read_b);
 
 		while(Serial.available() > 0){
 			c = Serial.read();
@@ -150,15 +167,16 @@ void setup() {
 	motor_off(IN3 ,IN4);
 
 	// configure LED PWM functionalitites
-	ledcSetup(0, 5000, 8);
+	ledcSetup(ENA_PWM_CHANNEL, 5000, 8);
 	ledcAttachPin(ENA, ENA_PWM_CHANNEL);
 	ledcWrite(ENA_PWM_CHANNEL, 0);
-	ledcSetup(0, 5000, 8);
-	ledcAttachPin(ENA, ENB_PWM_CHANNEL);
+
+	ledcSetup(ENB_PWM_CHANNEL, 5000, 8);
+	ledcAttachPin(ENB, ENB_PWM_CHANNEL);
 	ledcWrite(ENB_PWM_CHANNEL, 0);
 }
 
 void loop() {
-	report();
+	// report();
 	cmd_handle();
 }

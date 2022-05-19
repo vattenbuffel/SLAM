@@ -25,11 +25,11 @@ def subscribe(client):
         global time_start
         # print(f"Received `{msg.payload}` from `{msg.topic}` topic")
 
-        n+=1
-        if n%10 == 0:
-            print(f"{datetime.now().strftime('%H:%M:%S')}: Map received frequency: {n/(time.time()-time_start)} hz")
-            time_start = time.time()
-            n = 0
+        # n+=1
+        # if n%10 == 0:
+        #     print(f"{datetime.now().strftime('%H:%M:%S')}: Map received frequency: {n/(time.time()-time_start)} hz")
+        #     time_start = time.time()
+        #     n = 0
 
         if msg.topic == "vel":
             vel_msg_received(msg)
@@ -47,12 +47,12 @@ def open_serial():
 
             os.system(f"sudo chmod 666 {p}")
             ser = serial.Serial(p, 115200, timeout=1)
-            time.sleep(3)
-            ser.write(b'?')
-            data = ser.read_until(b'<esp>')
-            print(data)
-            if not b'esp' in data:
-                continue
+            # time.sleep(3)
+            # ser.write(b'?')
+            # data = ser.read_until(b'<esp>')
+            # print(data)
+            # if not b'esp' in data:
+            #     continue
             
             return ser
 
@@ -60,9 +60,10 @@ def open_serial():
 
 
 def vel_to_esp(vel_r, vel_l):
-    ser.write(b'!')
-    ser.write(vel_r)
-    ser.write(vel_l)
+    vel_r = 200
+    vel_l = 200
+    ser.write(bytearray([33, vel_r, vel_l])), # 33 is '!'
+    # print(f"sending vel_r: {vel_r}, vel_l: {vel_l}")
 
 
 n = 0
@@ -79,20 +80,24 @@ subscribe(client)
 print("Esp communicator started")
 
 while True:
-    ser.read_until(b'#')
-    # print(f"In waiting: {ser.in_waiting}")
-    d = ser.read(8) # Read two uint_32
-    encoder_right = int.from_bytes(d[:4], "little")
-    encoder_left = int.from_bytes(d[4:], "little")
+    # ser.read_until(b'#')
+    # d = ser.read(8) # Read two uint_32
+    # encoder_right = int.from_bytes(d[:4], "little")
+    # encoder_left = int.from_bytes(d[4:], "little")
 
-    nn += 1
-    if nn%250 == 0:
-        print(f"{datetime.now().strftime('%H:%M:%S')}: encoder recive frequency: {nn/(time.time()-time_startt)} hz")
-        time_startt = time.time()
-        nn = 0
-        print(f"right: {encoder_right}, left: {encoder_left}")
+    # nn += 1
+    # if nn%250 == 0:
+    #     print(f"{datetime.now().strftime('%H:%M:%S')}: encoder recive frequency: {nn/(time.time()-time_startt)} hz")
+    #     time_startt = time.time()
+    #     nn = 0
+    #     print(f"right: {encoder_right}, left: {encoder_left}")
 
-    client.publish("encoders", json.dumps([encoder_right, encoder_left]))
+    # if ser.in_waiting:
+    #     continue
+    # client.publish("encoders", json.dumps([encoder_right, encoder_left]))
+
+    d = ser.readline()
+    print(d)
     client.loop()
 
 
