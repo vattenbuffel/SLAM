@@ -30,7 +30,7 @@ def create_lidar():
             for _ in range(3):
                 try:
                     # device_path = f"/dev/ttyUSB{i}"
-                    device_path = f"/dev/ttyUSB0"
+                    device_path = f"/dev/ttyUSB1"
                     os.system(f"sudo chmod 666 {device_path}")
                     lidar = Lidar(None, device_path, timeout=3)
                     # Create an iterator to collect scan data from the RPLidar
@@ -76,6 +76,7 @@ if __name__ == '__main__':
     client.on_connect = on_connect
     client.connect(config.mqtt_broker)
     subscribe(client)
+    client.loop_start()
 
     # Create an RMHC SLAM object with a laser model and optional robot model
     slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=5, max_search_iter=10000)
@@ -106,27 +107,28 @@ if __name__ == '__main__':
             time_start = time.time()
             n = 0
 
-
         # Extract (quality, angle, distance) triples from current scan
         items = [item for item in next(iterator)]
 
         # Extract distances and angles from triples
         distances = [item[2] for item in items]
         # angles    = [360-item[1] for item in items]
-        angles    = [0-item[1] for item in items]
+        angles    = [item[1] for item in items]
 
         # Publish lidar data
-        client.publish("lidar_data", json.dumps((distances, angles)))
+        if config.slam_pub_lidar:
+            client.publish("lidar_data", json.dumps((distances, angles)))
 
         # Compute pose change
-        client.loop()
         pose_change = pelle.computePoseChange(enc_left, enc_right)
+        # print(f"Pose change: {pose_change}")
 
         # Update SLAM with current Lidar scan and scan angles if adequate
         if len(distances) > MIN_SAMPLES:
             slam.update(distances, scan_angles_degrees=angles, pose_change=pose_change)
             previous_distances = distances.copy()
             previous_angles    = angles.copy()
+            print(f"Good amount of lidar samples: {len(angles)}")
 
         # If not adequate, use previous
         elif previous_distances is not None:
