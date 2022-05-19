@@ -40,8 +40,6 @@ def subscribe(client):
         pygame.display.update()
 
 
-
-
     client.subscribe("lidar_data")
     client.on_message = on_message
 
