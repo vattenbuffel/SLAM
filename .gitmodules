@@ -4,3 +4,6 @@
 [submodule "src/PyRoboViz"]
 	path = src/PyRoboViz
 	url = git@github.com:simondlevy/PyRoboViz.git
+[submodule "src/FastestRplidar"]
+	path = src/FastestRplidar
+	url = git@github.com:thehapyone/FastestRplidar.git
