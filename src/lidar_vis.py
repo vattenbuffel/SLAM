@@ -3,10 +3,11 @@ from paho.mqtt import client
 import json
 import pygame
 import math
-import condfig
+import config
 
 WHITE =     (255, 255, 255)
 BLACK =       (0,   0,   0)
+RED   = (255, 0 ,0)
 (width, height) = (1920, 1080)
 
 pygame.init()
@@ -34,12 +35,14 @@ def subscribe(client):
         for i in range(len(distances)):
             ang = angles[i]
             alpha_rad = math.radians(ang)
-            d = distances[i]
+            d = distances[i]/10
 
             x = d*math.cos(alpha_rad) + width/2
-            y = d*math.sin(alpha_rad) + height/2
+            y = -d*math.sin(alpha_rad) + height/2
 
             pygame.draw.circle(screen, WHITE, (x, y), 1)
+
+        pygame.draw.circle(screen, RED, (int(width/2), int(height/2)), 10)
 
         pygame.display.update()
 

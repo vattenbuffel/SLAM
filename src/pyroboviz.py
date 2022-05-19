@@ -4,6 +4,7 @@ from paho.mqtt import client
 import json
 from datetime import datetime
 import time
+import random
 
 pos = None
 n = 0
@@ -52,7 +53,7 @@ def on_connect(client, userdata, flags, rc):
         print("Failed to connect, return code %d\n", rc)
 
 
-client = client.Client("pyroboviz")
+client = client.Client("pyroboviz" + str(int(random.random()*1000)))
 client.on_connect = on_connect
 client.connect(config.mqtt_broker)
 
