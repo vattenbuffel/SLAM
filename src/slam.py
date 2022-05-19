@@ -114,8 +114,11 @@ if __name__ == '__main__':
         distances = [item[2] for item in items]
         angles    = [360-item[1] for item in items]
 
+        # Publish lidar data
+        client.publish("lidar_data", json.dumps((distances, angles)))
+
         # Compute pose change
-        # client.loop()
+        client.loop()
         pose_change = pelle.computePoseChange(enc_left, enc_right)
 
         # Update SLAM with current Lidar scan and scan angles if adequate
