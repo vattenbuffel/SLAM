@@ -10,10 +10,10 @@
 #define ENB 26
 #define ENB_PWM_CHANNEL 0
 
-#define IN1 32
-#define IN2 32
-#define IN3 32
-#define IN4 32
+#define IN1 23
+#define IN2 22
+#define IN3 21
+#define IN4 19
 
 #define REPORT_FREQ_MS 5
 
@@ -88,7 +88,7 @@ void cmd_handle(){
 	}
 
 	c = Serial.peek();
-	Serial.printf("serial.available: %d, serial.peek(): %d, '%c'\n", Serial.available(), c, c);
+	// Serial.printf("serial.available: %d, serial.peek(): %d, '%c'\n", Serial.available(), c, c);
 
 	if (c == '?'){
 		Serial.write("<esp>");
@@ -119,11 +119,10 @@ void cmd_handle(){
 			motor_rev(IN3, IN4);
 		}
 		ledcWrite(ENB_PWM_CHANNEL, map(buf[2] >= 100 ? buf[2]-100 : buf[2], 0, 100, 0, 255));
-		Serial.print("received: !. right_vel: ");
-		Serial.print(buf[1]);
-		Serial.print(". left_vel: ");
-		Serial.println(buf[2]);
-
+		// Serial.print("received: !. right_vel: ");
+		// Serial.print(buf[1]);
+		// Serial.print(". left_vel: ");
+		// Serial.println(buf[2]);
 			
 	} else{
 		int bytes_available = Serial.available();
@@ -177,6 +176,10 @@ void setup() {
 }
 
 void loop() {
-	// report();
+	report();
 	cmd_handle();
+	// digitalWrite(IN4, HIGH);
+	// digitalWrite(IN3, HIGH);
+	// digitalWrite(IN2, HIGH);
+	// digitalWrite(IN1, HIGH);
 }
