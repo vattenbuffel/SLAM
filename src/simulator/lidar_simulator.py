@@ -55,7 +55,9 @@ class Vehicle:
         # This is pretty bad. It doesn't account for rotation of the robot 
         self.enc_left += enc_per_cm*self.v
         self.enc_right += enc_per_cm*self.v
-        print((self.enc_right, self.enc_left))
+
+    def enc_get(self):
+        return int(self.enc_right), int(self.enc_left)
 
 class Lidar:
     def __init__(self) -> None:
