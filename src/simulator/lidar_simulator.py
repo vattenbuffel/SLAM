@@ -1,10 +1,10 @@
-import pygame
 import config
 import sys
 import math
 import time
+if not config.headless:
+    import pygame
 
-pygame.font.init()
 
 
 class Line:
@@ -92,40 +92,41 @@ class Lidar:
             self.t_start = time.time()
             self.n = 0
 
-        screen.fill(WHITE)
         
         lidar.scan()
-        lidar.draw()
-        vehicle.draw()
+        if not config.headless:
+            screen.fill(WHITE)
+            lidar.draw()
+            vehicle.draw()
 
-        for l in map:
-            draw_line(l)
+            for l in map:
+                draw_line(l)
         
-        # draw_map_intersections()
+            # draw_map_intersections()
 
-        # pygame.display.flip()
-        pygame.display.update()
-        for events in pygame.event.get():
-            if events.type == pygame.QUIT:
-                sys.exit(0)
-            elif events.type == pygame.KEYDOWN:
-                if events.dict['unicode'] == 'w':
-                    vehicle.v = 1
-                elif events.dict['unicode'] == 'a':
-                    vehicle.omega = 1
-                elif events.dict['unicode'] == 'd':
-                    vehicle.omega = -1
-                elif events.dict['unicode'] == 's':
-                    vehicle.v = -1
-            elif events.type == pygame.KEYUP:
-                if events.dict['unicode'] == 'w':
-                    vehicle.v = 0
-                elif events.dict['unicode'] == 'a':
-                    vehicle.omega = 0
-                elif events.dict['unicode'] == 'd':
-                    vehicle.omega = 0
-                elif events.dict['unicode'] == 's':
-                    vehicle.v = -0
+            # pygame.display.flip()
+            pygame.display.update()
+            for events in pygame.event.get():
+                if events.type == pygame.QUIT:
+                    sys.exit(0)
+                elif events.type == pygame.KEYDOWN:
+                    if events.dict['unicode'] == 'w':
+                        vehicle.v = 1
+                    elif events.dict['unicode'] == 'a':
+                        vehicle.omega = 1
+                    elif events.dict['unicode'] == 'd':
+                        vehicle.omega = -1
+                    elif events.dict['unicode'] == 's':
+                        vehicle.v = -1
+                elif events.type == pygame.KEYUP:
+                    if events.dict['unicode'] == 'w':
+                        vehicle.v = 0
+                    elif events.dict['unicode'] == 'a':
+                        vehicle.omega = 0
+                    elif events.dict['unicode'] == 'd':
+                        vehicle.omega = 0
+                    elif events.dict['unicode'] == 's':
+                        vehicle.v = -0
 
         vehicle.update()
 
@@ -206,15 +207,17 @@ def draw_map_intersections():
 
 
 
-width, height = (480, 480)
-WHITE = (0,0,0)
-BLACK = (255,255,255)
-RED = (255, 0 ,0)
-BLUE = (0, 0, 255)
-GREEN = (0, 255, 0)
+if not config.headless:
+    width, height = (480, 480)
+    WHITE = (0,0,0)
+    BLACK = (255,255,255)
+    RED = (255, 0 ,0)
+    BLUE = (0, 0, 255)
+    GREEN = (0, 255, 0)
 
-screen=pygame.display.set_mode((width,height))
-my_font = pygame.font.SysFont('Comic Sans MS', 10)
+    screen = pygame.display.set_mode((width,height))
+    pygame.font.init()
+    my_font = pygame.font.SysFont('Comic Sans MS', 10)
 
 l1 = Line(-100,-100,-100,100)
 l2 = Line(-100,100,0,150)
