@@ -28,24 +28,29 @@ except Exception as e:
 
 
 def create_lidar():
-    while True:
-        for i in range(5):
-            for _ in range(3):
-                try:
-                    # device_path = f"/dev/ttyUSB{i}"
-                    device_path = f"/dev/ttyUSB1"
-                    os.system(f"sudo chmod 666 {device_path}")
-                    lidar = Lidar(None, device_path, timeout=3)
-                    # Create an iterator to collect scan data from the RPLidar
-                    iterator = lidar.iter_scans()
+    if config.lidar_sim:
+        lidar = Lidar()
+        return lidar, lidar
+
+    else:
+        for i in range(100):
+            for i in range(5):
+                for _ in range(3):
+                    try:
+                        # device_path = f"/dev/ttyUSB{i}"
+                        device_path = f"/dev/ttyUSB1"
+                        os.system(f"sudo chmod 666 {device_path}")
+                        lidar = Lidar(None, device_path, timeout=3)
+                        # Create an iterator to collect scan data from the RPLidar
+                        iterator = lidar.iter_scans()
 
 
-                    # First scan is crap, so ignore it
-                    next(iterator)
-                    return lidar, iterator
+                        # First scan is crap, so ignore it
+                        next(iterator)
+                        return lidar, iterator
 
-                except Exception as e:
-                    print(f"exception {e} happend")
+                    except Exception as e:
+                        print(f"exception {e} happend")
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
