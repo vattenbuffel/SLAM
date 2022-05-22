@@ -1,4 +1,4 @@
-headless = False
+headless = True
 width = 480
 height = 480
 

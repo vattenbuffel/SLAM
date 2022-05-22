@@ -138,7 +138,7 @@ class Lidar:
         for ang in self.scan_res:
             d, l, p = self.scan_res[ang]
             if d is not None:
-                res.append((1, ang, d*10)) # Change this to *100, to convert from dm to mm
+                res.append((1, ang, d*10)) 
         
         return res
 
