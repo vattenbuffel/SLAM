@@ -98,7 +98,7 @@ class Lidar:
             self.n = 0
 
         
-        lidar.scan()
+        self.scan()
         if not config_sim.headless:
             screen.fill(WHITE)
             lidar.draw()
@@ -109,7 +109,6 @@ class Lidar:
         
             # draw_map_intersections()
 
-            # pygame.display.flip()
             pygame.display.update()
             for events in pygame.event.get():
                 if events.type == pygame.QUIT:
@@ -138,7 +137,8 @@ class Lidar:
         res = []
         for ang in self.scan_res:
             d, l, p = self.scan_res[ang]
-            res.append((1, ang, d))
+            if d is not None:
+                res.append((1, ang, d*100))
         
         return res
 
