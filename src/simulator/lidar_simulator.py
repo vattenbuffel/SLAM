@@ -28,9 +28,9 @@ class Vehicle:
     def __init__(self) -> None:
         self.x = config_sim.vehicle_x0_px
         self.y = config_sim.vehicle_y0_px
-        self.v = 0 # cm/s
+        self.v = 1 # cm/s
         self.theta = config_sim.vehicle_theta_deg # deg
-        self.omega = 0 #deg/s
+        self.omega = 1 #deg/s
         self.size = config_sim.vehicle_size_px
 
     def draw(self):
@@ -138,7 +138,7 @@ class Lidar:
         for ang in self.scan_res:
             d, l, p = self.scan_res[ang]
             if d is not None:
-                res.append((1, ang, d*100))
+                res.append((1, ang, d*10)) # Change this to *100, to convert from dm to mm
         
         return res
 
