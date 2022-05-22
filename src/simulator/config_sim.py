@@ -6,6 +6,8 @@ vehicle_size_px = 16
 vehicle_x0_px = 50
 vehicle_y0_px = 50
 vehicle_theta_deg = 0
+vehicle_wheel_r_cm = 5.1
+vehicle_enc_per_rot = 1248
 
 intersection_size_px = 5
 
