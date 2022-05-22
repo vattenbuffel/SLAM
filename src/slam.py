@@ -3,13 +3,16 @@
 # at that rate.
 MIN_SAMPLES   = 150
 
+import config
 from breezyslam.algorithms import RMHC_SLAM
 from breezyslam.sensors import RPLidarA1 as LaserModel
-from adafruit_rplidar import RPLidar as Lidar
+if config.lidar_sim:
+    from simulator.lidar_simulator import Lidar as Lidar
+else:
+    from adafruit_rplidar import RPLidar as Lidar
 import os
 from paho.mqtt import client
 import json
-import config
 import time
 from datetime import datetime
 from Pelle import Pelle

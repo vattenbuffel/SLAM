@@ -1,8 +1,13 @@
-import config
+# I don't know why this is needed
+try:
+    import config_sim
+except ModuleNotFoundError:
+    import simulator.config_sim as config_sim
+
 import sys
 import math
 import time
-if not config.headless:
+if not config_sim.headless:
     import pygame
 
 
@@ -21,12 +26,12 @@ class Line:
 
 class Vehicle:
     def __init__(self) -> None:
-        self.x = config.vehicle_x0_px
-        self.y = config.vehicle_y0_px
+        self.x = config_sim.vehicle_x0_px
+        self.y = config_sim.vehicle_y0_px
         self.v = 0 # dm/s
-        self.theta = config.vehicle_theta_deg # deg
+        self.theta = config_sim.vehicle_theta_deg # deg
         self.omega = 0 #deg/s
-        self.size = config.vehicle_size_px
+        self.size = config_sim.vehicle_size_px
 
     def draw(self):
         size = width, height = (300, 300)
@@ -47,10 +52,10 @@ class Vehicle:
 
 class Lidar:
     def __init__(self) -> None:
-        self.scan_n = config.lidar_scan_n
-        self.dtheta_ang = 360 / config.lidar_scan_n
+        self.scan_n = config_sim.lidar_scan_n
+        self.dtheta_ang = 360 / config_sim.lidar_scan_n
         self.scan_res = {} # Dict with ang as keys and d and line  as values
-        self.scan_d_dm = config.lidar_scan_d_dm
+        self.scan_d_dm = config_sim.lidar_scan_d_dm
         self.t_start = time.time()
         self.n = 0
 
@@ -94,7 +99,7 @@ class Lidar:
 
         
         lidar.scan()
-        if not config.headless:
+        if not config_sim.headless:
             screen.fill(WHITE)
             lidar.draw()
             vehicle.draw()
@@ -141,7 +146,7 @@ class Lidar:
     def draw(self):
         for key in self.scan_res:
             d, l, p = self.scan_res[key]
-            if config.lidar_lines_draw:
+            if config_sim.lidar_lines_draw:
                 draw_line(l)
 
         for key in self.scan_res:
@@ -207,7 +212,7 @@ def draw_map_intersections():
 
 
 
-if not config.headless:
+if not config_sim.headless:
     width, height = (480, 480)
     WHITE = (0,0,0)
     BLACK = (255,255,255)
