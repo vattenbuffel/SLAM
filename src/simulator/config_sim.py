@@ -1,4 +1,4 @@
-headless = True
+headless = False
 width = 480
 height = 480
 
@@ -12,5 +12,5 @@ intersection_size_px = 5
 lidar_scan_n = 360
 lidar_scan_hz = 5.5
 lidar_scan_acc_percent = 1
-lidar_scan_d_dm = 60
+lidar_scan_d_cm = 600
 lidar_lines_draw = False
