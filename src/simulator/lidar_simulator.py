@@ -32,6 +32,9 @@ class Vehicle:
         self.theta = config_sim.vehicle_theta_deg # deg
         self.omega = 0 #deg/s
         self.size = config_sim.vehicle_size_px
+        self.enc_left = 0
+        self.enc_right = 0
+        self.t_update_prev = time.time()
 
     def draw(self):
         size = width, height = (300, 300)
@@ -48,7 +51,11 @@ class Vehicle:
         self.x += math.cos(math.radians(self.theta))*self.v
         self.y += math.sin(math.radians(self.theta))*self.v
 
-
+        enc_per_cm = config_sim.vehicle_enc_per_rot / (config_sim.vehicle_wheel_r_cm*2*math.pi)
+        # This is pretty bad. It doesn't account for rotation of the robot 
+        self.enc_left += enc_per_cm*self.v
+        self.enc_right += enc_per_cm*self.v
+        print((self.enc_right, self.enc_left))
 
 class Lidar:
     def __init__(self) -> None:
