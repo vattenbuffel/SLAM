@@ -12,3 +12,4 @@ lidar_scan_n = 360
 lidar_scan_hz = 5.5
 lidar_scan_acc_percent = 1
 lidar_scan_d_dm = 60
+lidar_lines_draw = False

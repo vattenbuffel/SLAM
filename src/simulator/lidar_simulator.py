@@ -51,6 +51,8 @@ class Lidar:
         self.dtheta_ang = 360 / config.lidar_scan_n
         self.scan_res = {} # Dict with ang as keys and d and line  as values
         self.scan_d_dm = config.lidar_scan_d_dm
+        self.t_start = time.time()
+        self.n = 0
 
     def scan(self):
         self.scan_res = {}
@@ -80,14 +82,66 @@ class Lidar:
                         else:
                             self.scan_res[ang] = (d, l, p)
 
+    def iter_scans(self):
+        return self
+
     def __next__(self):
-        print("next")
+        self.n+=1
+        if self.n%60 == 0:
+            print(f"hz: {self.n/(time.time() - self.t_start)}")
+            self.t_start = time.time()
+            self.n = 0
+
+        screen.fill(WHITE)
+        
+        lidar.scan()
+        lidar.draw()
+        vehicle.draw()
+
+        for l in map:
+            draw_line(l)
+        
+        # draw_map_intersections()
+
+        # pygame.display.flip()
+        pygame.display.update()
+        for events in pygame.event.get():
+            if events.type == pygame.QUIT:
+                sys.exit(0)
+            elif events.type == pygame.KEYDOWN:
+                if events.dict['unicode'] == 'w':
+                    vehicle.v = 1
+                elif events.dict['unicode'] == 'a':
+                    vehicle.omega = 1
+                elif events.dict['unicode'] == 'd':
+                    vehicle.omega = -1
+                elif events.dict['unicode'] == 's':
+                    vehicle.v = -1
+            elif events.type == pygame.KEYUP:
+                if events.dict['unicode'] == 'w':
+                    vehicle.v = 0
+                elif events.dict['unicode'] == 'a':
+                    vehicle.omega = 0
+                elif events.dict['unicode'] == 'd':
+                    vehicle.omega = 0
+                elif events.dict['unicode'] == 's':
+                    vehicle.v = -0
+
+        vehicle.update()
+
+        res = []
+        for ang in self.scan_res:
+            d, l, p = self.scan_res[ang]
+            res.append((1, ang, d))
+        
+        return res
 
 
     def draw(self):
         for key in self.scan_res:
             d, l, p = self.scan_res[key]
-            # draw_line(l)
+            if config.lidar_lines_draw:
+                draw_line(l)
 
         for key in self.scan_res:
             d, l, p = self.scan_res[key]
@@ -151,6 +205,7 @@ def draw_map_intersections():
 
 
 
+
 width, height = (480, 480)
 WHITE = (0,0,0)
 BLACK = (255,255,255)
@@ -172,51 +227,11 @@ map = [l1, l2, l3, l4, l5]
 vehicle = Vehicle()
 
 lidar = Lidar()
-
-t_start = time.time()
-n = 0
-
-while True:
-    n+=1
-    if n%60 == 0:
-        print(f"hz: {n/(time.time() - t_start)}")
-        t_start = time.time()
-        n = 0
-
-    screen.fill(WHITE)
-    
-    lidar.scan()
-    lidar.draw()
-    vehicle.draw()
-
-    for l in map:
-        draw_line(l)
-    
-    # draw_map_intersections()
+iterator = lidar.iter_scans()
+# First scan is crap, so ignore it
+next(iterator)
 
 
-    # pygame.display.flip()
-    pygame.display.update()
-    for events in pygame.event.get():
-        if events.type == pygame.QUIT:
-            sys.exit(0)
-        elif events.type == pygame.KEYDOWN:
-            if events.dict['unicode'] == 'w':
-                vehicle.v = 1
-            elif events.dict['unicode'] == 'a':
-                vehicle.omega = 1
-            elif events.dict['unicode'] == 'd':
-                vehicle.omega = -1
-            elif events.dict['unicode'] == 's':
-                vehicle.v = -1
-        elif events.type == pygame.KEYUP:
-            if events.dict['unicode'] == 'w':
-                vehicle.v = 0
-            elif events.dict['unicode'] == 'a':
-                vehicle.omega = 0
-            elif events.dict['unicode'] == 'd':
-                vehicle.omega = 0
-            elif events.dict['unicode'] == 's':
-                vehicle.v = -0
-
-    vehicle.update()
+if __name__ == '__main__':
+    while True:
+        next(iterator)
