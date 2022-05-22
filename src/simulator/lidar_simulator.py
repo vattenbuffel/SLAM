@@ -28,7 +28,7 @@ class Vehicle:
     def __init__(self) -> None:
         self.x = config_sim.vehicle_x0_px
         self.y = config_sim.vehicle_y0_px
-        self.v = 0 # dm/s
+        self.v = 0 # cm/s
         self.theta = config_sim.vehicle_theta_deg # deg
         self.omega = 0 #deg/s
         self.size = config_sim.vehicle_size_px
@@ -55,7 +55,7 @@ class Lidar:
         self.scan_n = config_sim.lidar_scan_n
         self.dtheta_ang = 360 / config_sim.lidar_scan_n
         self.scan_res = {} # Dict with ang as keys and d and line  as values
-        self.scan_d_dm = config_sim.lidar_scan_d_dm
+        self.scan_d_cm = config_sim.lidar_scan_d_cm
         self.t_start = time.time()
         self.n = 0
 
@@ -63,8 +63,8 @@ class Lidar:
         self.scan_res = {}
 
         for ang in range(0, 360, math.ceil(360/self.scan_n)):
-            x = vehicle.x + math.cos(math.radians(ang + vehicle.theta))*self.scan_d_dm
-            y = vehicle.y + math.sin(math.radians(ang + vehicle.theta))*self.scan_d_dm
+            x = vehicle.x + math.cos(math.radians(ang + vehicle.theta))*self.scan_d_cm
+            y = vehicle.y + math.sin(math.radians(ang + vehicle.theta))*self.scan_d_cm
             l = Line(vehicle.x, vehicle.y, x, y)
             for map_l in map:
                 t1, t2 = intersection(l, map_l)
@@ -107,7 +107,7 @@ class Lidar:
             for l in map:
                 draw_line(l)
         
-            # draw_map_intersections()
+            draw_map_intersections()
 
             # pygame.display.flip()
             pygame.display.update()
@@ -225,12 +225,13 @@ if not config_sim.headless:
     my_font = pygame.font.SysFont('Comic Sans MS', 10)
 
 l1 = Line(-100,-100,-100,100)
-l2 = Line(-100,100,0,150)
-l3 = Line(0,150,100,100)
-l4 = Line(100,100,100,-100)
-l5 = Line(100,-100,-100,-100)
+l2 = Line(-100,100,200,100)
+l3 = Line(200,100,200,0)
+l4 = Line(200,0,50,0)
+l5 = Line(50,0, 50,-100)
+l6 = Line(50, -100, -100, -100)
 
-map = [l1, l2, l3, l4, l5]
+map = [l1, l2, l3, l4, l5, l6]
 
 vehicle = Vehicle()
 
