@@ -6,30 +6,31 @@ MIN_SAMPLES   = 10
 import config
 from breezyslam.algorithms import RMHC_SLAM
 from breezyslam.sensors import RPLidarA1 as LaserModel
-if config.lidar_sim:
-    from simulator.lidar_simulator import Lidar as Lidar
-    from simulator.lidar_simulator import vehicle
+if config.sim:
+    from simulator import Lidar as Lidar
+    from simulator import vehicle
 else:
     from adafruit_rplidar import RPLidar as Lidar
 import os
-#from paho.mqtt import client
+from paho.mqtt import client
 import json
 import time
 from datetime import datetime
 from Pelle import Pelle
 import json
 
-headless = False
-try:
-    from roboviz import MapVisualizer
-    print(f"Starting in not headless mode")
-except Exception as e:
-    headless = True
-    print(f"Starting in headless mode")
+headless = config.headless
+if not headless:
+    try:
+        from roboviz import MapVisualizer
+        print(f"Starting in not headless mode")
+    except Exception as e:
+        headless = True
+        print(f"Starting in headless mode")
 
 
 def create_lidar():
-    if config.lidar_sim:
+    if config.sim:
         lidar = Lidar()
         iterator = lidar.iter_scans()
         return lidar, iterator
@@ -82,11 +83,11 @@ def subscribe(client):
 
 if __name__ == '__main__':
     enc_left, enc_right = 0,0
-    #client = client.Client("slam")
-    #client.on_connect = on_connect
-    #client.connect(config.mqtt_broker)
-    #subscribe(client)
-    #client.loop_start()
+    client = client.Client("slam")
+    client.on_connect = on_connect
+    client.connect(config.mqtt_broker)
+    subscribe(client)
+    client.loop_start()
 
     # Create an RMHC SLAM object with a laser model and optional robot model
     slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=5, max_search_iter=10000)
@@ -127,11 +128,10 @@ if __name__ == '__main__':
 
         # Publish lidar data
         if config.slam_pub_lidar:
-            pass
-            #client.publish("lidar_data", json.dumps((distances, angles)))
+            client.publish("lidar_data", json.dumps((distances, angles)))
 
         # Compute pose change
-        if config.lidar_sim:
+        if config.sim:
             enc_right, enc_left = vehicle.enc_get()
         pose_change = pelle.computePoseChange(enc_left, enc_right)
         # print(f"Pose change: {pose_change}")
@@ -159,37 +159,7 @@ if __name__ == '__main__':
 
             # Get current map bytes as grayscale
             slam.getmap(mapbytes)
-            #publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
-
-            import numpy as np
-            mapp = np.array(mapbytes, dtype=np.int32).reshape(-1, int(len(mapbytes)**0.5))
-            assert mapp.shape[0] == mapp.shape[1]
-            import cv2
-
-            def mm_to_pixel(x, y):
-                convesion_factor = config.map_size_m*1000 / config.map_size_pixels
-                x = x/convesion_factor
-                y = y/convesion_factor
-                return int(x), int(y)
-            x, y = mm_to_pixel(x, y)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x-1, y)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x+1, y)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x, y-1)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x-1, y-1)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x+1, y-1)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x, y+1)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x-1, y+1)
-            mapp[y, x] = 0
-            x, y = mm_to_pixel(x+1, y+1)
-            mapp[y, x] = 0
-            cv2.imwrite(f"slam_imgs/{time.time()}.png", mapp)
+            publish_data(mapbytes, (x,y,theta, slam.sigma_xy_mm, slam.sigma_theta_degrees))
 
             last_pub_t_s = time.time()
 

@@ -1,11 +1,12 @@
+import config
 from breezyslam.vehicles import WheeledVehicle
 import time
 
 class Pelle(WheeledVehicle):
     def __init__(self):
-        WheeledVehicle.__init__(self, 51, 90)
+        WheeledVehicle.__init__(self, config.vehicle_wheel_r_cm*10, 90)
         
-        self.ticks_per_cycle = 1248
+        self.ticks_per_cycle = config.vehicle_enc_per_rot
                         
     def __str__(self):
         

@@ -1,15 +1,11 @@
-# I don't know why this is needed
-try:
-    import config_sim
-except ModuleNotFoundError:
-    import simulator.config_sim as config_sim
-
+import config
 import sys
 import math
 import time
-if not config_sim.headless:
-    import pygame
 
+headless = config.headless
+if not headless:
+    import pygame
 
 
 class Line:
@@ -26,18 +22,18 @@ class Line:
 
 class Vehicle:
     def __init__(self) -> None:
-        self.x = config_sim.vehicle_x0_px
-        self.y = config_sim.vehicle_y0_px
+        self.x = config.vehicle_x0_px
+        self.y = config.vehicle_y0_px
         self.v = 1 # cm/s
-        self.theta = config_sim.vehicle_theta_deg # deg
+        self.theta = config.vehicle_theta_deg # deg
         self.omega = 1 #deg/s
-        self.size = config_sim.vehicle_size_px
+        self.size = config.vehicle_size_px
         self.enc_left = 0
         self.enc_right = 0
         self.t_update_prev = time.time()
 
     def draw(self):
-        size = width, height = (300, 300)
+        size = (300, 300)
         surface = pygame.Surface(size)
         pygame.draw.polygon(surface, GREEN, ((0, 100), (0, 200), (200, 200), (200, 300), (300, 150), (200, 0), (200, 100)))
         surface = pygame.transform.rotate(surface, self.theta)
@@ -51,7 +47,7 @@ class Vehicle:
         self.x += math.cos(math.radians(self.theta))*self.v
         self.y += math.sin(math.radians(self.theta))*self.v
 
-        enc_per_cm = config_sim.vehicle_enc_per_rot / (config_sim.vehicle_wheel_r_cm*2*math.pi)
+        enc_per_cm = config.vehicle_enc_per_rot / (config.vehicle_wheel_r_cm*2*math.pi)
         # This is pretty bad. It doesn't account for rotation of the robot 
         self.enc_left += enc_per_cm*self.v
         self.enc_right += enc_per_cm*self.v
@@ -61,10 +57,10 @@ class Vehicle:
 
 class Lidar:
     def __init__(self) -> None:
-        self.scan_n = config_sim.lidar_scan_n
-        self.dtheta_ang = 360 / config_sim.lidar_scan_n
+        self.scan_n = config.lidar_scan_n
+        self.dtheta_ang = 360 / config.lidar_scan_n
         self.scan_res = {} # Dict with ang as keys and d and line  as values
-        self.scan_d_cm = config_sim.lidar_scan_d_cm
+        self.scan_d_cm = config.lidar_scan_d_cm
         self.t_start = time.time()
         self.n = 0
 
@@ -108,7 +104,7 @@ class Lidar:
 
         
         self.scan()
-        if not config_sim.headless:
+        if not headless:
             screen.fill(WHITE)
             lidar.draw()
             vehicle.draw()
@@ -123,6 +119,7 @@ class Lidar:
                 if events.type == pygame.QUIT:
                     sys.exit(0)
                 elif events.type == pygame.KEYDOWN:
+                    print(events)
                     if events.dict['unicode'] == 'w':
                         vehicle.v = 1
                     elif events.dict['unicode'] == 'a':
@@ -131,6 +128,8 @@ class Lidar:
                         vehicle.omega = -1
                     elif events.dict['unicode'] == 's':
                         vehicle.v = -1
+                    elif events.dict['unicode'] == '\x1b': # esc
+                        exit(0)
                 elif events.type == pygame.KEYUP:
                     if events.dict['unicode'] == 'w':
                         vehicle.v = 0
@@ -155,7 +154,7 @@ class Lidar:
     def draw(self):
         for key in self.scan_res:
             d, l, p = self.scan_res[key]
-            if config_sim.lidar_lines_draw:
+            if config.lidar_lines_draw:
                 draw_line(l)
 
         for key in self.scan_res:
@@ -221,7 +220,7 @@ def draw_map_intersections():
 
 
 
-if not config_sim.headless:
+if not headless:
     width, height = (480, 480)
     WHITE = (0,0,0)
     BLACK = (255,255,255)
