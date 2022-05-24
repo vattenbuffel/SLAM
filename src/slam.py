@@ -8,7 +8,6 @@ from breezyslam.algorithms import RMHC_SLAM
 from breezyslam.sensors import RPLidarA1 as LaserModel
 if config.lidar_sim:
     from simulator.lidar_simulator import Lidar as Lidar
-    from simulator.lidar_simulator import vehicle
 else:
     from adafruit_rplidar import RPLidar as Lidar
 import os
@@ -89,7 +88,7 @@ if __name__ == '__main__':
     #client.loop_start()
 
     # Create an RMHC SLAM object with a laser model and optional robot model
-    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=5, max_search_iter=10000)
+    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=50, max_search_iter=10000)
     if not headless:
         viz = MapVisualizer(config.map_size_pixels, config.map_size_m, 'SLAM')
 
@@ -131,8 +130,6 @@ if __name__ == '__main__':
             #client.publish("lidar_data", json.dumps((distances, angles)))
 
         # Compute pose change
-        if config.lidar_sim:
-            enc_right, enc_left = vehicle.enc_get()
         pose_change = pelle.computePoseChange(enc_left, enc_right)
         # print(f"Pose change: {pose_change}")
 
