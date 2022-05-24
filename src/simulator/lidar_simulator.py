@@ -7,8 +7,7 @@ except ModuleNotFoundError:
 import sys
 import math
 import time
-if not config_sim.headless:
-    import pygame
+import pygame
 
 
 
@@ -108,7 +107,7 @@ class Lidar:
 
         
         self.scan()
-        if not config_sim.headless:
+        if not headless:
             screen.fill(WHITE)
             lidar.draw()
             vehicle.draw()
@@ -221,7 +220,7 @@ def draw_map_intersections():
 
 
 
-if not config_sim.headless:
+if not headless:
     width, height = (480, 480)
     WHITE = (0,0,0)
     BLACK = (255,255,255)
@@ -246,8 +245,6 @@ vehicle = Vehicle()
 
 lidar = Lidar()
 iterator = lidar.iter_scans()
-# First scan is crap, so ignore it
-next(iterator)
 
 
 if __name__ == '__main__':
