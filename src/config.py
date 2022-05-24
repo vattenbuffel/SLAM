@@ -1,4 +1,4 @@
-headless = False
+headless = True
 
 # mqtt_broker = "192.168.1.11"
 mqtt_broker = "192.168.1.5"

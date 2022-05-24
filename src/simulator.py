@@ -119,7 +119,6 @@ class Lidar:
                 if events.type == pygame.QUIT:
                     sys.exit(0)
                 elif events.type == pygame.KEYDOWN:
-                    print(events)
                     if events.dict['unicode'] == 'w':
                         vehicle.v = 1
                     elif events.dict['unicode'] == 'a':

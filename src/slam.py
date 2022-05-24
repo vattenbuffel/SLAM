@@ -141,7 +141,7 @@ if __name__ == '__main__':
             slam.update(distances, scan_angles_degrees=angles, pose_change=pose_change)
             previous_distances = distances.copy()
             previous_angles    = angles.copy()
-            print(f"Good amount of lidar samples: {len(angles)}")
+            # print(f"Good amount of lidar samples: {len(angles)}")
 
         # If not adequate, use previous
         elif previous_distances is not None:
@@ -152,8 +152,7 @@ if __name__ == '__main__':
             exit()
 
         # Publish
-        # if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
-        if True:
+        if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
             # Get current robot position
             x, y, theta = slam.getpos()
 
@@ -163,10 +162,10 @@ if __name__ == '__main__':
 
             last_pub_t_s = time.time()
 
-        # Display map and robot pose, exiting gracefully if user closes it
-        if not headless:
-            if not viz.display(x/1000., y/1000., theta, mapbytes):
-                exit(0)
+            # Display map and robot pose, exiting gracefully if user closes it
+            if not headless:
+                if not viz.display(x/1000., y/1000., theta, mapbytes):
+                    exit(0)
 
 
 
