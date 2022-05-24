@@ -1,4 +1,4 @@
-headless = True
+headless = False
 
 # mqtt_broker = "192.168.1.11"
 mqtt_broker = "192.168.1.5"
@@ -20,11 +20,11 @@ height = 480
 vehicle_size_px = 16
 vehicle_x0_px = 50
 vehicle_y0_px = 50
-vehicle_theta0_deg = 0
-vehicle_v0_px = 1
-vehcile_omega0_deg = 1
+vehicle_theta0_deg = 180
+vehicle_v0_px = 0
+vehcile_omega0_deg = 0
 
-intersection_size_px = 5
+intersection_size_r = 5
 
 lidar_scan_n = 360
 lidar_scan_d_cm = 600

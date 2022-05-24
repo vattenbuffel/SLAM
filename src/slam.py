@@ -7,7 +7,7 @@ import config
 from breezyslam.algorithms import RMHC_SLAM
 from breezyslam.sensors import RPLidarA1 as LaserModel
 if config.sim:
-    from simulator import Lidar as Lidar
+    from simulator import lidar
     from simulator import vehicle
 else:
     from adafruit_rplidar import RPLidar as Lidar
@@ -31,7 +31,7 @@ if not headless:
 
 def create_lidar():
     if config.sim:
-        lidar = Lidar()
+        global lidar
         iterator = lidar.iter_scans()
         return lidar, iterator
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     client.loop_start()
 
     # Create an RMHC SLAM object with a laser model and optional robot model
-    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=5, max_search_iter=10000)
+    slam = RMHC_SLAM(LaserModel(), config.map_size_pixels, config.map_size_m, map_quality=1, max_search_iter=1000)
     if not headless:
         viz = MapVisualizer(config.map_size_pixels, config.map_size_m, 'SLAM')
 

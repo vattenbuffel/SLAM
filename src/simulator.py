@@ -1,3 +1,4 @@
+import numpy as np
 import config
 import sys
 import math
@@ -58,7 +59,6 @@ class Vehicle:
 class Lidar:
     def __init__(self) -> None:
         self.scan_n = config.lidar_scan_n
-        self.dtheta_ang = 360 / config.lidar_scan_n
         self.scan_res = {} # Dict with ang as keys and d and line  as values
         self.scan_d_cm = config.lidar_scan_d_cm
         self.t_start = time.time()
@@ -67,7 +67,7 @@ class Lidar:
     def scan(self):
         self.scan_res = {}
 
-        for ang in range(0, 360, math.ceil(360/self.scan_n)):
+        for ang in np.linspace(0, 360, self.scan_n):
             x = vehicle.x + math.cos(math.radians(ang + vehicle.theta))*self.scan_d_cm
             y = vehicle.y + math.sin(math.radians(ang + vehicle.theta))*self.scan_d_cm
             l = Line(vehicle.x, vehicle.y, x, y)
@@ -106,7 +106,8 @@ class Lidar:
         self.scan()
         if not headless:
             screen.fill(WHITE)
-            lidar.draw()
+            self.draw()
+
             vehicle.draw()
 
             for l in map:
@@ -193,7 +194,7 @@ def draw_line(l:Line):
 
 def draw_circle(x, y, text=False):
     p = pos_to_pix(x, y)
-    pygame.draw.circle(screen, RED, p, radius=5)
+    pygame.draw.circle(screen, RED, p, radius=config.intersection_size_r)
     if text:
         text_surface = my_font.render(f'{(x,y)}', False, BLACK)
         screen.blit(text_surface, p)
@@ -244,8 +245,6 @@ vehicle = Vehicle()
 
 lidar = Lidar()
 iterator = lidar.iter_scans()
-# First scan is crap, so ignore it
-next(iterator)
 
 
 if __name__ == '__main__':
