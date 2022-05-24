@@ -24,9 +24,9 @@ class Vehicle:
     def __init__(self) -> None:
         self.x = config.vehicle_x0_px
         self.y = config.vehicle_y0_px
-        self.v = 1 # cm/s
-        self.theta = config.vehicle_theta_deg # deg
-        self.omega = 1 #deg/s
+        self.v = config.vehicle_v0_px # cm/s
+        self.theta = config.vehicle_theta0_deg # deg
+        self.omega = config.vehcile_omega0_deg #deg/s
         self.size = config.vehicle_size_px
         self.enc_left = 0
         self.enc_right = 0
