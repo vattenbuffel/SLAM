@@ -7,7 +7,8 @@ except ModuleNotFoundError:
 import sys
 import math
 import time
-import pygame
+if not config_sim.headless:
+    import pygame
 
 
 
@@ -54,7 +55,9 @@ class Vehicle:
         # This is pretty bad. It doesn't account for rotation of the robot 
         self.enc_left += enc_per_cm*self.v
         self.enc_right += enc_per_cm*self.v
-        print((self.enc_right, self.enc_left))
+
+    def enc_get(self):
+        return int(self.enc_right), int(self.enc_left)
 
 class Lidar:
     def __init__(self) -> None:
@@ -105,7 +108,7 @@ class Lidar:
 
         
         self.scan()
-        if not headless:
+        if not config_sim.headless:
             screen.fill(WHITE)
             lidar.draw()
             vehicle.draw()
@@ -218,7 +221,7 @@ def draw_map_intersections():
 
 
 
-if not headless:
+if not config_sim.headless:
     width, height = (480, 480)
     WHITE = (0,0,0)
     BLACK = (255,255,255)
@@ -243,6 +246,8 @@ vehicle = Vehicle()
 
 lidar = Lidar()
 iterator = lidar.iter_scans()
+# First scan is crap, so ignore it
+next(iterator)
 
 
 if __name__ == '__main__':
