@@ -184,21 +184,30 @@ class Lidar:
                 draw_circle(*p, text=False)
         
 def intersection(l1:Line, l2:Line):
-    xa0 = round(l1.x0, 9)
-    ya0 = round(l1.y0, 9)
-    xa1 = round(l1.x1, 9)
-    ya1 = round(l1.y1, 9)
+    xa0 = l1.x0
+    ya0 = l1.y0
+    xa1 = l1.x1
+    ya1 = l1.y1
 
-    xb0 = round(l2.x0, 9)
-    yb0 = round(l2.y0, 9)
-    xb1 = round(l2.x1, 9)
-    yb1 = round(l2.y1, 9)
+    xb0 = l2.x0
+    yb0 = l2.y0
+    xb1 = l2.x1
+    yb1 = l2.y1
 
     return intersection_numba(xa0, ya0, xa1, ya1, xb0, yb0, xb1, yb1)
 
 @numba.njit
 def intersection_numba(xa0, ya0, xa1, ya1, xb0, yb0, xb1, yb1):
-    # Maybe round here
+    xa0 = np.round(xa0, 9)
+    ya0 = np.round(ya0, 9)
+    xa1 = np.round(xa1, 9)
+    ya1 = np.round(ya1, 9)
+
+    xb0 = np.round(xb0, 9)
+    yb0 = np.round(yb0, 9)
+    xb1 = np.round(xb1, 9)
+    yb1 = np.round(yb1, 9)
+
     dxa = xa1 - xa0
     dya = ya1 - ya0
     dxb = xb1 - xb0
