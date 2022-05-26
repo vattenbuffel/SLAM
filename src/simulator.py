@@ -119,7 +119,7 @@ class Lidar:
     def __next__(self):
         self.n+=1
         if self.n%60 == 0:
-            print(f"hz: {self.n/(time.time() - self.t_start)}")
+            print(f"simulator frequency: {self.n/(time.time() - self.t_start)} hz")
             self.t_start = time.time()
             self.n = 0
 
@@ -221,7 +221,6 @@ def intersection_numba(xa0, ya0, xa1, ya1, xb0, yb0, xb1, yb1):
     if dxa != 0:
         t1 = (xb0 - xa0 + dxb*t2)/dxa
     return t1, t2
-
 
 
 def draw_circle(x, y, text=False):

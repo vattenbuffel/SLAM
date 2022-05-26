@@ -25,7 +25,7 @@ vehicle_theta0_deg = 180
 vehicle_v0_px = 0
 vehcile_omega0_deg = 0
 
-intersection_size_r = 5
+intersection_size_r = 3
 
 lidar_scan_n = 360
 lidar_scan_d_cm = 600
