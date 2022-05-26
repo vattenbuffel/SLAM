@@ -123,9 +123,9 @@ class Lidar:
                     if events.dict['unicode'] == 'w':
                         vehicle.v = 1
                     elif events.dict['unicode'] == 'a':
-                        vehicle.omega = 1
+                        vehicle.omega = 2
                     elif events.dict['unicode'] == 'd':
-                        vehicle.omega = -1
+                        vehicle.omega = -2
                     elif events.dict['unicode'] == 's':
                         vehicle.v = -1
                     elif events.dict['unicode'] == '\x1b': # esc
