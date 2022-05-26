@@ -1,7 +1,7 @@
 # Ideally we could use all 250 or so samples that the RPLidar delivers in one 
 # scan, but on slower computers you'll get an empty map and unchanging position
 # at that rate.
-MIN_SAMPLES   = 10
+MIN_SAMPLES   = 200
 
 import config
 from breezyslam.algorithms import RMHC_SLAM
@@ -147,9 +147,6 @@ if __name__ == '__main__':
         elif previous_distances is not None:
             print(f"Warning too few lidar samples: {len(angles)}")
             slam.update(previous_distances, scan_angles_degrees=previous_angles, pose_change=pose_change)
-        else:
-            print(f"too few scan samples: {len(distances)}")
-            exit()
 
         # Publish
         if time.time() - last_pub_t_s > 1/config.map_pub_freq_hz:
