@@ -3,6 +3,7 @@ import config
 import sys
 import math
 import time
+import numba
 
 headless = config.headless
 if not headless:
@@ -16,10 +17,23 @@ class Line:
         self.y0 = y0
         self.y1 = y1
 
+
     def point_at_t(self, t):
-        x = self.x0 + t*(self.x1 - self.x0)
-        y = self.y0 + t*(self.y1 - self.y0)
-        return x, y
+        return point_at_t_numba(self.x0, self.y0, self.x1, self.y1, t)
+
+    def points_get(self):
+        return self.x0, self.y0, self.x1, self.y1
+
+@numba.njit
+def point_at_t_numba(x0, y0, x1, y1, t):
+    x = x0 + t*(x1 - x0)
+    y = y0 + t*(y1 - y0)
+    return x, y
+
+def draw_line(l:Line):
+    p0 = pos_to_pix(l.x0, l.y0)
+    p1 = pos_to_pix(l.x1, l.y1)
+    pygame.draw.line(screen, BLACK, p0, p1)
 
 class Vehicle:
     def __init__(self) -> None:
@@ -64,33 +78,40 @@ class Lidar:
         self.t_start = time.time()
         self.n = 0
 
-    def scan(self):
-        self.scan_res = {}
-
-        for ang in np.linspace(0, 360, self.scan_n):
-            x = vehicle.x + math.cos(math.radians(ang + vehicle.theta))*self.scan_d_cm
-            y = vehicle.y + math.sin(math.radians(ang + vehicle.theta))*self.scan_d_cm
-            l = Line(vehicle.x, vehicle.y, x, y)
-            for map_l in map:
-                t1, t2 = intersection(l, map_l)
+    @staticmethod
+    @numba.njit
+    def scan_numba(scan_n, theta, vehicle_x, vehicle_y, scan_d_cm, map_lines):
+        scan_res = {}
+        for ang in np.linspace(0, 360, scan_n):
+            x = vehicle_x + np.cos(np.deg2rad(ang + theta))*scan_d_cm
+            y = vehicle_y + np.sin(np.deg2rad(ang + theta))*scan_d_cm
+            l = vehicle_x, vehicle_y, x, y
+            for map_l in map_lines:
+                t1, t2 = intersection_numba(vehicle_x, vehicle_y, x, y, map_l[0], map_l[1], map_l[2], map_l[3])
 
                 if t1 <= 1 and t1 >= 0 and t2 <= 1 and t2 >= 0:
-                    p = l.point_at_t(t1)
-                    d = ((p[0] - vehicle.x)**2 + (p[1] - vehicle.y)**2)**0.5
+                    p = point_at_t_numba(vehicle_x, vehicle_y, x, y, t1)
+                    d = ((p[0] - vehicle_x)**2 + (p[1] - vehicle_y)**2)**0.5
                 else:
                     p = None
                     d = None
 
-                if ang not in self.scan_res:
-                    self.scan_res[ang] = (d, l, p)
+                if ang not in scan_res:
+                    scan_res[ang] = (d, l, p)
                 else:
                     if d is not None :
-                        if ang in self.scan_res:
-                            d0,_,_ = self.scan_res[ang]
+                        if ang in scan_res:
+                            d0,_,_ = scan_res[ang]
                             if d0 is None  or d < d0:
-                                self.scan_res[ang] = (d, l, p)
+                                scan_res[ang] = (d, l, p)
                         else:
-                            self.scan_res[ang] = (d, l, p)
+                            scan_res[ang] = (d, l, p)
+
+        return scan_res
+
+
+    def scan(self):
+        self.scan_res = self.scan_numba(self.scan_n, vehicle.theta, vehicle.x, vehicle.y, self.scan_d_cm, map_points)
 
     def iter_scans(self):
         return self
@@ -110,7 +131,7 @@ class Lidar:
 
             vehicle.draw()
 
-            for l in map:
+            for l in map_lines:
                 draw_line(l)
         
             draw_map_intersections()
@@ -162,7 +183,7 @@ class Lidar:
             if p is not None:
                 draw_circle(*p, text=False)
         
-def intersection(l1:Line, l2:Line):
+def intersection_line(l1:Line, l2:Line):
     xa0 = round(l1.x0, 9)
     ya0 = round(l1.y0, 9)
     xa1 = round(l1.x1, 9)
@@ -173,6 +194,11 @@ def intersection(l1:Line, l2:Line):
     xb1 = round(l2.x1, 9)
     yb1 = round(l2.y1, 9)
 
+    return intersection_numba(xa0, ya0, xa1, ya1, xb0, yb0, xb1, yb1)
+
+@numba.njit
+def intersection_numba(xa0, ya0, xa1, ya1, xb0, yb0, xb1, yb1):
+    # Maybe round here
     dxa = xa1 - xa0
     dya = ya1 - ya0
     dxb = xb1 - xb0
@@ -187,10 +213,7 @@ def intersection(l1:Line, l2:Line):
         t1 = (xb0 - xa0 + dxb*t2)/dxa
     return t1, t2
 
-def draw_line(l:Line):
-    p0 = pos_to_pix(l.x0, l.y0)
-    p1 = pos_to_pix(l.x1, l.y1)
-    pygame.draw.line(screen, BLACK, p0, p1)
+
 
 def draw_circle(x, y, text=False):
     p = pos_to_pix(x, y)
@@ -206,9 +229,9 @@ def pos_to_pix(x, y):
     return x, y
 
 def draw_map_intersections():
-    for i in range(len(map)):
-        l1, l2 = map[i], map[(1+i)%len(map)]
-        t1, t2 = intersection(l1, l2)
+    for i in range(len(map_lines)):
+        l1, l2 = map_lines[i], map_lines[(1+i)%len(map_lines)]
+        t1, t2 = intersection_line(l1, l2)
 
         if t1 <=1  and t1 >= 0:
             p = l1.point_at_t(t1)
@@ -218,7 +241,6 @@ def draw_map_intersections():
             continue
 
         draw_circle(*p, text=False)
-
 
 
 
@@ -295,7 +317,8 @@ points2 = scale_points(np.array(points2), np.array([3,3]), 100*config.sim_scale)
 
 lines1 = lines_from_points(points1)
 lines2 = lines_from_points(points2)
-map = lines1 + lines2
+map_lines = lines1 + lines2
+map_points = np.array([line.points_get() for line in map_lines])
 
 
 vehicle = Vehicle()
