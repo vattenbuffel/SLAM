@@ -23,12 +23,12 @@ class Line:
 
 class Vehicle:
     def __init__(self) -> None:
-        self.x = config.vehicle_x0_px
-        self.y = config.vehicle_y0_px
-        self.v = config.vehicle_v0_px # cm/s
-        self.theta = config.vehicle_theta0_deg # deg
-        self.omega = config.vehcile_omega0_deg #deg/s
-        self.size = config.vehicle_size_px
+        self.x = config.vehicle_x0_px * config.sim_scale
+        self.y = config.vehicle_y0_px * config.sim_scale
+        self.v = config.vehicle_v0_px # cm/s * config.sim_scale
+        self.theta = config.vehicle_theta0_deg * config.sim_scale# deg
+        self.omega = config.vehcile_omega0_deg * config.sim_scale#deg/s
+        self.size = config.vehicle_size_px * config.sim_scale
         self.enc_left = 0
         self.enc_right = 0
         self.t_update_prev = time.time()
@@ -60,7 +60,7 @@ class Lidar:
     def __init__(self) -> None:
         self.scan_n = config.lidar_scan_n
         self.scan_res = {} # Dict with ang as keys and d and line  as values
-        self.scan_d_cm = config.lidar_scan_d_cm
+        self.scan_d_cm = config.lidar_scan_d_cm * config.sim_scale
         self.t_start = time.time()
         self.n = 0
 
@@ -121,13 +121,13 @@ class Lidar:
                     sys.exit(0)
                 elif events.type == pygame.KEYDOWN:
                     if events.dict['unicode'] == 'w':
-                        vehicle.v = 1
+                        vehicle.v = 1 * config.sim_scale
                     elif events.dict['unicode'] == 'a':
-                        vehicle.omega = 2
+                        vehicle.omega = 2 * config.sim_scale
                     elif events.dict['unicode'] == 'd':
-                        vehicle.omega = -2
+                        vehicle.omega = -2 * config.sim_scale
                     elif events.dict['unicode'] == 's':
-                        vehicle.v = -1
+                        vehicle.v = -1 * config.sim_scale
                     elif events.dict['unicode'] == '\x1b': # esc
                         exit(0)
                 elif events.type == pygame.KEYUP:
@@ -146,7 +146,7 @@ class Lidar:
         for ang in self.scan_res:
             d, l, p = self.scan_res[ang]
             if d is not None:
-                res.append((1, ang, d*10)) 
+                res.append((1, ang, d*10 / config.sim_scale))  
         
         return res
 
@@ -214,14 +214,16 @@ def draw_map_intersections():
             p = l1.point_at_t(t1)
         elif t2 <=1  and t2 >= 0:
             p = l2.point_at_t(t2)
+        else:
+            continue
 
-        draw_circle(*p, text=True)
+        draw_circle(*p, text=False)
 
 
 
 
 if not headless:
-    width, height = (480, 480)
+    width, height = (config.width, config.height)
     WHITE = (0,0,0)
     BLACK = (255,255,255)
     RED = (255, 0 ,0)

@@ -14,8 +14,9 @@ vehicle_enc_per_rot = 1248
 
 # Simulator
 sim = True
-width = 480
-height = 480
+width = 1000
+height = 1000
+sim_scale = 0.5
 
 vehicle_size_px = 16
 vehicle_x0_px = 50
