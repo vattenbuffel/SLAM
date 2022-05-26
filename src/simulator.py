@@ -183,7 +183,7 @@ class Lidar:
             if p is not None:
                 draw_circle(*p, text=False)
         
-def intersection_line(l1:Line, l2:Line):
+def intersection(l1:Line, l2:Line):
     xa0 = round(l1.x0, 9)
     ya0 = round(l1.y0, 9)
     xa1 = round(l1.x1, 9)
@@ -231,7 +231,7 @@ def pos_to_pix(x, y):
 def draw_map_intersections():
     for i in range(len(map_lines)):
         l1, l2 = map_lines[i], map_lines[(1+i)%len(map_lines)]
-        t1, t2 = intersection_line(l1, l2)
+        t1, t2 = intersection(l1, l2)
 
         if t1 <=1  and t1 >= 0:
             p = l1.point_at_t(t1)
