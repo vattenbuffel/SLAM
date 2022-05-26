@@ -234,14 +234,69 @@ if not headless:
     pygame.font.init()
     my_font = pygame.font.SysFont('Comic Sans MS', 10)
 
-l1 = Line(-100,-100,-100,100)
-l2 = Line(-100,100,200,100)
-l3 = Line(200,100,200,0)
-l4 = Line(200,0,50,0)
-l5 = Line(50,0, 50,-100)
-l6 = Line(50, -100, -100, -100)
+def lines_from_points(points):
+    lines = []
+    for i in range(len(points)-1):
+        p0 = points[i]
+        p1 = points[i+1]
+        lines.append(Line(*p0, *p1))
 
-map = [l1, l2, l3, l4, l5, l6]
+    return lines
+
+def scale_points(points , dp, scale):
+    return (points - dp) * scale
+
+
+points1 = ((0,0), 
+                    (0, 4.1),
+                    (2.1, 4.1),
+                    (2.1, 5.2),
+                    (2.1, 4.1),
+                    (0, 4.1),
+                    (0, 7),
+                    (2.1, 7),
+                    (2.1, 6.2),
+                    (2.3, 10),
+                    (3.8 , 10),
+                    (4, 7),
+                    (11.1, 7),
+                    (11.1, 1.8),
+                    (8.1, 1.8),
+                    (11.1, 1.8),
+                    (11.1, -2.6),
+                    (8.1, -2.6),
+                    (8.1, 1),
+                    (8.1, -2.6),
+                    (5.9, -2.6),
+                    (5.9, 0.4),
+                    (5.2, 0.4),
+                    (5.2, 0),
+                    (3.5, 0),
+                    (3.5, 3.3),
+                    (4.4, 3.3),
+                    (3, 3.3),
+                    (3.5, 3.3),
+                    (3.5, 0),
+                    (2.2, 0),
+                    (2.2, 3.3),
+                    (2.1, 3.3),
+                    (2.1, 0),
+                    (0,0),
+)
+points1 = scale_points(np.array(points1), np.array([3,3]), 100*config.sim_scale)
+
+points2 = ((5.2, 3.3),
+            (6.2, 3.3),
+            (5.9, 1.3),
+            (5.2, 1.3),
+            (5.2, 3.3),
+)
+points2 = scale_points(np.array(points2), np.array([3,3]), 100*config.sim_scale)
+
+lines1 = lines_from_points(points1)
+lines2 = lines_from_points(points2)
+map = lines1 + lines2
+
 
 vehicle = Vehicle()
 
