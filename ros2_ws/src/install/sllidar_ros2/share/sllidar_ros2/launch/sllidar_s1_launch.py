@@ -1,0 +1,1 @@
+/home/noa/Documents/SLAM/ros2_ws/src/sllidar_ros2/launch/sllidar_s1_launch.py

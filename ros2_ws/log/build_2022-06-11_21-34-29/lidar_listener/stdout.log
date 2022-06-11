@@ -1,0 +1,22 @@
+[35m[1mScanning dependencies of target listener[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[100%] [32m[1mLinking CXX executable listener[0m
+[100%] Built target listener
+-- Install configuration: ""
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/lib/lidar_listener/listener
+-- Set runtime path of "/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/lib/lidar_listener/listener" to ""
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/ament_index/resource_index/package_run_dependencies/lidar_listener
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/ament_index/resource_index/parent_prefix_path/lidar_listener
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/ament_prefix_path.sh
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/ament_prefix_path.dsv
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/path.sh
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/path.dsv
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.bash
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.sh
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.zsh
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.dsv
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.dsv
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/ament_index/resource_index/packages/lidar_listener
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/cmake/lidar_listenerConfig.cmake
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/cmake/lidar_listenerConfig-version.cmake
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.xml

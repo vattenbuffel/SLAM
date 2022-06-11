@@ -1,0 +1,141 @@
+[0.020s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces
+[0.032s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.050s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.050s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.204s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.211s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.270s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.271s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.274s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.410s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.459s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.515s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[0.626s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.637s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.665s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[0.665s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[0.690s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.690s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[0.690s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[0.718s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.721s] -- Added test 'lint_cmake' to check CMake code style
+[0.722s] -- Added test 'xmllint' to check XML markup files
+[0.731s] -- Configuring done
+[0.773s] -- Generating done
+[0.778s] -- Build files have been written to: /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces
+[0.792s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces
+[0.793s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[0.861s] [ 10%] Built target tutorial_interfaces__rosidl_generator_c
+[0.904s] [ 12%] Built target tutorial_interfaces__cpp
+[0.904s] [ 23%] Built target tutorial_interfaces__rosidl_typesupport_c
+[0.908s] [ 33%] Built target tutorial_interfaces__rosidl_typesupport_introspection_c
+[0.936s] [ 35%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[0.939s] [ 46%] Built target tutorial_interfaces__rosidl_typesupport_cpp
+[0.942s] [ 56%] Built target tutorial_interfaces__rosidl_typesupport_introspection_cpp
+[1.066s] [ 64%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_cpp
+[1.089s] [ 66%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[1.178s] [ 74%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_c
+[1.195s] [ 74%] Built target tutorial_interfaces
+[1.210s] [ 76%] Built target tutorial_interfaces__py
+[1.231s] [ 79%] [32m[1mLinking C shared library rosidl_generator_py/tutorial_interfaces/libtutorial_interfaces__python.so[0m
+[1.262s] [ 84%] Built target tutorial_interfaces__python
+[1.282s] [ 89%] [32m[1mLinking C shared library rosidl_generator_py/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[1.282s] [ 89%] [32m[1mLinking CXX shared library rosidl_generator_py/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[1.283s] [ 92%] [32m[1mLinking C shared library rosidl_generator_py/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[1.309s] [ 97%] Built target tutorial_interfaces__rosidl_typesupport_introspection_c__pyext
+[1.309s] [ 97%] Built target tutorial_interfaces__rosidl_typesupport_c__pyext
+[1.332s] [100%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[1.341s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[1.383s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces
+[1.391s] -- Install configuration: ""
+[1.391s] -- Execute custom install script
+[1.391s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/ament_index/resource_index/rosidl_interfaces/tutorial_interfaces
+[1.398s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__functions.h
+[1.406s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__struct.h
+[1.413s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__type_support.h
+[1.420s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/num.h
+[1.426s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/rosidl_generator_c__visibility_control.h
+[1.433s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/add_three_ints.h
+[1.440s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__functions.h
+[1.447s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__struct.h
+[1.455s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__type_support.h
+[1.461s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/library_path.sh
+[1.468s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/library_path.dsv
+[1.475s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__rosidl_typesupport_fastrtps_c.h
+[1.481s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.488s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__rosidl_typesupport_fastrtps_c.h
+[1.495s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_typesupport_fastrtps_c.so
+[1.502s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__rosidl_typesupport_fastrtps_cpp.hpp
+[1.509s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.515s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__rosidl_typesupport_fastrtps_cpp.hpp
+[1.522s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[1.529s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__rosidl_typesupport_introspection_c.h
+[1.536s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.543s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__rosidl_typesupport_introspection_c.h
+[1.549s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__builder.hpp
+[1.556s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__struct.hpp
+[1.562s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__traits.hpp
+[1.569s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/num.hpp
+[1.575s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/add_three_ints.hpp
+[1.582s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__builder.hpp
+[1.588s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__struct.hpp
+[1.594s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__traits.hpp
+[1.601s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/msg/detail/num__rosidl_typesupport_introspection_cpp.hpp
+[1.608s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/include/tutorial_interfaces/srv/detail/add_three_ints__rosidl_typesupport_introspection_cpp.hpp
+[1.614s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/pythonpath.sh
+[1.621s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/pythonpath.dsv
+[1.628s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/__init__.py
+[1.635s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/msg/__init__.py
+[1.641s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/msg/_num.py
+[1.648s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/srv/__init__.py
+[1.655s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/srv/_add_three_ints.py
+[1.661s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[1.668s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[1.675s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[1.681s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__python.so
+[1.688s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/msg/Num.idl
+[1.694s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/srv/AddThreeInts.idl
+[1.701s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/msg/Num.msg
+[1.708s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/srv/AddThreeInts.srv
+[1.714s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/srv/AddThreeInts_Request.msg
+[1.721s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/srv/AddThreeInts_Response.msg
+[1.728s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/ament_index/resource_index/package_run_dependencies/tutorial_interfaces
+[1.734s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/ament_index/resource_index/parent_prefix_path/tutorial_interfaces
+[1.741s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/ament_prefix_path.sh
+[1.748s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/ament_prefix_path.dsv
+[1.754s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/path.sh
+[1.761s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/environment/path.dsv
+[1.767s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/local_setup.bash
+[1.774s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/local_setup.sh
+[1.780s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/local_setup.zsh
+[1.787s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/local_setup.dsv
+[1.793s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.dsv
+[1.800s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/ament_index/resource_index/packages/tutorial_interfaces
+[1.807s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/rosidl_cmake-extras.cmake
+[1.813s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.820s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[1.826s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[1.833s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.840s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.846s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.853s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfacesConfig.cmake
+[1.859s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfacesConfig-version.cmake
+[1.866s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.xml
+[1.872s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_generator_c.so
+[1.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_typesupport_introspection_c.so
+[1.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_typesupport_c.so
+[1.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_typesupport_introspection_cpp.so
+[1.874s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/libtutorial_interfaces__rosidl_typesupport_cpp.so
+[1.896s] Compiling '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages/tutorial_interfaces/__init__.py'...
+[1.899s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_generator_cExport.cmake
+[1.899s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_generator_cExport-noconfig.cmake
+[1.899s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[1.900s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.900s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_cExport.cmake
+[1.900s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[1.900s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_generator_cppExport.cmake
+[1.900s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[1.900s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.900s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_cppExport.cmake
+[1.901s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake/tutorial_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[1.903s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces

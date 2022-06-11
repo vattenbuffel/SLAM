@@ -1,0 +1,1 @@
+/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub_tutorial_interfaces/ament_cmake_environment_hooks/local_setup.bash

@@ -1,0 +1,4 @@
+Launch rplidar:
+	Remove sudo priveleges of usb port: sudo chmod 666 /dev/ttyUSB0
+	ros2 launch sllidar_ros2 sllidar_launch.py 
+	

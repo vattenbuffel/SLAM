@@ -1,0 +1,15 @@
+[0.025s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[0.076s] [ 10%] Built target tutorial_interfaces__rosidl_generator_c
+[0.076s] [ 12%] Built target tutorial_interfaces__cpp
+[0.098s] [ 23%] Built target tutorial_interfaces__rosidl_typesupport_c
+[0.099s] [ 33%] Built target tutorial_interfaces__rosidl_typesupport_introspection_c
+[0.102s] [ 43%] Built target tutorial_interfaces__rosidl_typesupport_introspection_cpp
+[0.119s] [ 53%] Built target tutorial_interfaces__rosidl_typesupport_cpp
+[0.122s] [ 64%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.141s] [ 74%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_c
+[0.156s] [ 74%] Built target tutorial_interfaces
+[0.171s] [ 76%] Built target tutorial_interfaces__py
+[0.189s] [ 84%] Built target tutorial_interfaces__python
+[0.209s] [100%] Built target tutorial_interfaces__rosidl_typesupport_c__pyext
+[0.209s] [100%] Built target tutorial_interfaces__rosidl_typesupport_introspection_c__pyext
+[0.209s] [100%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_c__pyext

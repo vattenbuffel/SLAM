@@ -7,3 +7,9 @@
 [submodule "src/FastestRplidar"]
 	path = src/FastestRplidar
 	url = git@github.com:thehapyone/FastestRplidar.git
+[submodule "sllidar_ros2"]
+	path = src/sllidar_ros2
+	url = https://github.com/Slamtec/sllidar_ros2.git
+[submodule "ros2:ws/src/sllidar_ros2"]
+	path = ros2:ws/src/sllidar_ros2
+	url = git@github.com:Slamtec/sllidar_ros2.git

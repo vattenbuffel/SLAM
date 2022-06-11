@@ -1,0 +1,397 @@
+[0.095s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.095s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fd8b92bacd0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fd8b92bacd0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fd8b9247280>)
+[0.112s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.113s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/noa/Documents/SLAM/ros2_ws'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub) by extension 'ros'
+[0.132s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp_pubsub' with type 'ros.ament_cmake' and name 'cpp_pubsub'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extensions ['colcon_pkg']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extension 'colcon_pkg'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extensions ['colcon_meta']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_pubsub_tutorial_interfaces) by extension 'ros'
+[0.133s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp_pubsub_tutorial_interfaces' with type 'ros.ament_cmake' and name 'cpp_pubsub_tutorial_interfaces'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_listener) by extension 'ros'
+[0.134s] DEBUG:colcon.colcon_core.package_identification:Package 'src/lidar_listener' with type 'ros.ament_cmake' and name 'lidar_listener'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ros'
+[0.135s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/tutorial_interfaces) by extension 'ros'
+[0.135s] DEBUG:colcon.colcon_core.package_identification:Package 'src/tutorial_interfaces' with type 'ros.ament_cmake' and name 'tutorial_interfaces'
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.157s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.158s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/noa/Documents/SLAM/ros2_ws/install
+[0.159s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[0.160s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'cmake_target' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] DEBUG:colcon.colcon_core.verb:Building package 'cpp_pubsub' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub', 'merge_install': False, 'path': '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub', 'symlink_install': False, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'lidar_listener' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'lidar_listener' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener', 'merge_install': False, 'path': '/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener', 'symlink_install': False, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'sllidar_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2', 'merge_install': False, 'path': '/home/noa/Documents/SLAM/ros2_ws/src/sllidar_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'tutorial_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces', 'merge_install': False, 'path': '/home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'cpp_pubsub_tutorial_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'cpp_pubsub_tutorial_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces', 'merge_install': False, 'path': '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub_tutorial_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.213s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.214s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.215s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces' with build type 'ament_cmake'
+[0.215s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces'
+[0.217s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.217s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.217s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.221s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub' with build type 'ament_cmake'
+[0.221s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub'
+[0.222s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.222s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.226s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener' with build type 'ament_cmake'
+[0.226s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener'
+[0.227s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.227s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.231s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/noa/Documents/SLAM/ros2_ws/src/sllidar_ros2' with build type 'ament_cmake'
+[0.231s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/noa/Documents/SLAM/ros2_ws/src/sllidar_ros2'
+[0.232s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.232s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.240s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[0.246s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub -- -j8 -l8
+[0.251s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[0.254s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2 -- -j8 -l8
+[0.326s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub -- -j8 -l8
+[0.333s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2 -- -j8 -l8
+[0.357s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub
+[0.369s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2
+[0.370s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp_pubsub)
+[0.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub
+[0.374s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub' for CMake module files
+[0.374s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub' for CMake config files
+[0.374s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp_pubsub', 'cmake_prefix_path')
+[0.375s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/hook/cmake_prefix_path.ps1'
+[0.376s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/hook/cmake_prefix_path.dsv'
+[0.376s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/hook/cmake_prefix_path.sh'
+[0.377s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/lib'
+[0.377s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/bin'
+[0.377s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/lib/pkgconfig/cpp_pubsub.pc'
+[0.378s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/lib/python3.8/site-packages'
+[0.378s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/bin'
+[0.379s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.ps1'
+[0.379s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.dsv'
+[0.380s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.sh'
+[0.380s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.bash'
+[0.381s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.zsh'
+[0.381s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/colcon-core/packages/cpp_pubsub)
+[0.384s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[0.385s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2' for CMake module files
+[0.386s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2
+[0.386s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2' for CMake config files
+[0.386s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[0.386s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[0.387s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[0.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[0.388s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib'
+[0.388s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/bin'
+[0.388s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[0.388s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib/python3.8/site-packages'
+[0.388s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/bin'
+[0.389s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[0.389s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[0.389s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[0.389s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[0.390s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[0.390s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[0.401s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp_pubsub)
+[0.402s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub' for CMake module files
+[0.402s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub' for CMake config files
+[0.403s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp_pubsub', 'cmake_prefix_path')
+[0.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/hook/cmake_prefix_path.ps1'
+[0.404s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/hook/cmake_prefix_path.dsv'
+[0.405s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/hook/cmake_prefix_path.sh'
+[0.406s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/lib'
+[0.406s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/bin'
+[0.406s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/lib/pkgconfig/cpp_pubsub.pc'
+[0.406s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/lib/python3.8/site-packages'
+[0.406s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/bin'
+[0.407s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.ps1'
+[0.408s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.dsv'
+[0.409s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.sh'
+[0.409s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.bash'
+[0.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.zsh'
+[0.410s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/colcon-core/packages/cpp_pubsub)
+[0.426s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[0.427s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2' for CMake module files
+[0.428s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2' for CMake config files
+[0.428s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[0.429s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[0.429s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[0.430s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[0.430s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib'
+[0.430s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/bin'
+[0.430s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[0.431s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib/python3.8/site-packages'
+[0.431s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/bin'
+[0.432s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[0.432s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[0.433s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[0.433s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[0.434s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[0.434s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[0.436s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[0.481s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces
+[0.522s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tutorial_interfaces)
+[0.523s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces' for CMake module files
+[0.524s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces
+[0.524s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces' for CMake config files
+[0.525s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'cmake_prefix_path')
+[0.526s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.ps1'
+[0.527s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.dsv'
+[0.527s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.sh'
+[0.528s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib'
+[0.528s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'ld_library_path_lib')
+[0.528s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.ps1'
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.dsv'
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.sh'
+[0.530s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/bin'
+[0.530s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/pkgconfig/tutorial_interfaces.pc'
+[0.530s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages'
+[0.530s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'pythonpath')
+[0.531s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/pythonpath.ps1'
+[0.531s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/pythonpath.dsv'
+[0.531s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/pythonpath.sh'
+[0.532s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/bin'
+[0.533s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.ps1'
+[0.533s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.dsv'
+[0.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.sh'
+[0.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.bash'
+[0.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.zsh'
+[0.535s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/colcon-core/packages/tutorial_interfaces)
+[0.579s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tutorial_interfaces)
+[0.580s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces' for CMake module files
+[0.581s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces' for CMake config files
+[0.582s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'cmake_prefix_path')
+[0.582s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.ps1'
+[0.583s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.dsv'
+[0.583s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.sh'
+[0.584s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib'
+[0.584s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'ld_library_path_lib')
+[0.584s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.ps1'
+[0.585s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.dsv'
+[0.585s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.sh'
+[0.585s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/bin'
+[0.585s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/pkgconfig/tutorial_interfaces.pc'
+[0.586s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/lib/python3.8/site-packages'
+[0.586s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'pythonpath')
+[0.586s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/pythonpath.ps1'
+[0.587s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/pythonpath.dsv'
+[0.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/hook/pythonpath.sh'
+[0.588s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/bin'
+[0.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.ps1'
+[0.589s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.dsv'
+[0.589s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.sh'
+[0.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.bash'
+[0.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/package.zsh'
+[0.591s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/colcon-core/packages/tutorial_interfaces)
+[0.591s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub_tutorial_interfaces' with build type 'ament_cmake'
+[0.591s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub_tutorial_interfaces'
+[0.591s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.591s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.602s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces -- -j8 -l8
+[0.655s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces -- -j8 -l8
+[0.675s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces
+[0.683s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp_pubsub_tutorial_interfaces)
+[0.684s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces' for CMake module files
+[0.685s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces
+[0.685s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces' for CMake config files
+[0.685s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp_pubsub_tutorial_interfaces', 'cmake_prefix_path')
+[0.686s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/hook/cmake_prefix_path.ps1'
+[0.686s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/hook/cmake_prefix_path.dsv'
+[0.686s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/hook/cmake_prefix_path.sh'
+[0.687s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib'
+[0.687s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/bin'
+[0.687s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib/pkgconfig/cpp_pubsub_tutorial_interfaces.pc'
+[0.687s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib/python3.8/site-packages'
+[0.687s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/bin'
+[0.687s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.ps1'
+[0.688s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.dsv'
+[0.688s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.sh'
+[0.688s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.bash'
+[0.689s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.zsh'
+[0.689s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/colcon-core/packages/cpp_pubsub_tutorial_interfaces)
+[0.708s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp_pubsub_tutorial_interfaces)
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces' for CMake module files
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces' for CMake config files
+[0.709s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp_pubsub_tutorial_interfaces', 'cmake_prefix_path')
+[0.710s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/hook/cmake_prefix_path.ps1'
+[0.710s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/hook/cmake_prefix_path.dsv'
+[0.710s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/hook/cmake_prefix_path.sh'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/bin'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib/pkgconfig/cpp_pubsub_tutorial_interfaces.pc'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib/python3.8/site-packages'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/bin'
+[0.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.ps1'
+[0.712s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.dsv'
+[0.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.sh'
+[0.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.bash'
+[0.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.zsh'
+[0.713s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/colcon-core/packages/cpp_pubsub_tutorial_interfaces)
+[1.577s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[1.594s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lidar_listener)
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener' for CMake module files
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener' for CMake config files
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/bin'
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/lib/pkgconfig/lidar_listener.pc'
+[1.596s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/lib/python3.8/site-packages'
+[1.596s] Level 1:colcon.colcon_core.environment:checking '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/bin'
+[1.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.ps1'
+[1.597s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.dsv'
+[1.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.sh'
+[1.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.bash'
+[1.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.zsh'
+[1.598s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/colcon-core/packages/lidar_listener)
+[1.608s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.608s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.608s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[1.608s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.614s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.614s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.614s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.625s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.625s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noa/Documents/SLAM/ros2_ws/install/local_setup.ps1'
+[1.626s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/noa/Documents/SLAM/ros2_ws/install/_local_setup_util_ps1.py'
+[1.627s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noa/Documents/SLAM/ros2_ws/install/setup.ps1'
+[1.628s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noa/Documents/SLAM/ros2_ws/install/local_setup.sh'
+[1.628s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/noa/Documents/SLAM/ros2_ws/install/_local_setup_util_sh.py'
+[1.629s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noa/Documents/SLAM/ros2_ws/install/setup.sh'
+[1.629s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noa/Documents/SLAM/ros2_ws/install/local_setup.bash'
+[1.630s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noa/Documents/SLAM/ros2_ws/install/setup.bash'
+[1.631s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noa/Documents/SLAM/ros2_ws/install/local_setup.zsh'
+[1.631s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noa/Documents/SLAM/ros2_ws/install/setup.zsh'

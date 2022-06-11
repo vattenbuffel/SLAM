@@ -1,0 +1,22 @@
+[0.010s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[0.030s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.046s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.189s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.245s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.250s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.256s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.330s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.351s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.411s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.433s] CMake Error at /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+[0.433s]   rosidl_generate_interfaces() the passed file 'srv/AddThreeInts.srv' doesn't
+[0.433s]   exist relative to the CMAKE_CURRENT_SOURCE_DIR
+[0.433s]   '/home/noa/Documents/SLAM/ros2_ws/tutorial_interfaces'
+[0.433s] Call Stack (most recent call first):
+[0.433s]   CMakeLists.txt:37 (rosidl_generate_interfaces)
+[0.433s] 
+[0.433s] 
+[0.434s] -- Configuring incomplete, errors occurred!
+[0.434s] See also "/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces/CMakeFiles/CMakeOutput.log".
+[0.438s] make: *** [Makefile:222: cmake_check_build_system] Error 1
+[0.439s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8

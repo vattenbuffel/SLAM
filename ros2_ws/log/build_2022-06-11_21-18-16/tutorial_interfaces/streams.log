@@ -1,0 +1,111 @@
+[0.025s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces
+[0.076s] -- The C compiler identification is GNU 9.4.0
+[0.126s] -- The CXX compiler identification is GNU 9.4.0
+[0.130s] -- Check for working C compiler: /usr/bin/cc
+[0.195s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.195s] -- Detecting C compiler ABI info
+[0.273s] -- Detecting C compiler ABI info - done
+[0.286s] -- Detecting C compile features
+[0.286s] -- Detecting C compile features - done
+[0.288s] -- Check for working CXX compiler: /usr/bin/c++
+[0.360s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.361s] -- Detecting CXX compiler ABI info
+[0.428s] -- Detecting CXX compiler ABI info - done
+[0.441s] -- Detecting CXX compile features
+[0.442s] -- Detecting CXX compile features - done
+[0.444s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.465s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.465s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.707s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.779s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.782s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.787s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.866s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.890s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.953s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.992s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[1.062s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[1.169s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.175s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.195s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[1.196s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[1.221s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") 
+[1.221s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.221s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[1.221s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[1.239s] -- Found PythonExtra: .so  
+[1.275s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.278s] -- Added test 'lint_cmake' to check CMake code style
+[1.279s] -- Added test 'xmllint' to check XML markup files
+[1.288s] -- Configuring done
+[1.322s] -- Generating done
+[1.324s] -- Build files have been written to: /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces
+[1.329s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/tutorial_interfaces -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces
+[1.332s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[1.364s] [35m[1mScanning dependencies of target tutorial_interfaces__cpp[0m
+[1.367s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.372s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.619s] [  5%] Built target tutorial_interfaces__cpp
+[1.631s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.631s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.631s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.712s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_generator_c[0m
+[1.729s] [ 15%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_generator_c.dir/rosidl_generator_c/tutorial_interfaces/msg/detail/num__functions.c.o[0m
+[1.734s] [ 17%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_generator_c.dir/rosidl_generator_c/tutorial_interfaces/srv/detail/add_three_ints__functions.c.o[0m
+[1.783s] [ 20%] [32m[1mLinking C shared library libtutorial_interfaces__rosidl_generator_c.so[0m
+[1.822s] [ 20%] Built target tutorial_interfaces__rosidl_generator_c
+[1.834s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.834s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.890s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_introspection_cpp[0m
+[1.905s] [ 28%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tutorial_interfaces/srv/detail/add_three_ints__type_support.cpp.o[0m
+[1.906s] [ 30%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tutorial_interfaces/msg/detail/num__type_support.cpp.o[0m
+[1.932s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_cpp[0m
+[1.950s] [ 33%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tutorial_interfaces/msg/num__type_support.cpp.o[0m
+[1.968s] [ 35%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tutorial_interfaces/srv/add_three_ints__type_support.cpp.o[0m
+[2.072s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[2.140s] [ 38%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tutorial_interfaces/msg/detail/dds_fastrtps/num__type_support.cpp.o[0m
+[2.162s] [ 41%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tutorial_interfaces/srv/detail/dds_fastrtps/add_three_ints__type_support.cpp.o[0m
+[2.173s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_c[0m
+[2.252s] [ 43%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tutorial_interfaces/msg/num__type_support.cpp.o[0m
+[2.257s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_introspection_c[0m
+[2.280s] [ 46%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tutorial_interfaces/msg/detail/num__type_support.c.o[0m
+[2.302s] [ 48%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tutorial_interfaces/srv/detail/add_three_ints__type_support.c.o[0m
+[2.315s] [ 51%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tutorial_interfaces/srv/add_three_ints__type_support.cpp.o[0m
+[2.323s] [ 53%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[2.344s] [ 56%] [32m[1mLinking C shared library libtutorial_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.360s] [ 58%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_c.so[0m
+[2.376s] [ 61%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_cpp.so[0m
+[2.376s] [ 61%] Built target tutorial_interfaces__rosidl_typesupport_introspection_cpp
+[2.378s] [ 61%] Built target tutorial_interfaces__rosidl_typesupport_introspection_c
+[2.400s] [ 61%] Built target tutorial_interfaces__rosidl_typesupport_c
+[2.420s] [ 61%] Built target tutorial_interfaces__rosidl_typesupport_cpp
+[2.687s] [ 64%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.770s] [ 64%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.778s] [ 66%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.986s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_fastrtps_c[0m
+[3.002s] [ 71%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tutorial_interfaces/msg/detail/num__type_support_c.cpp.o[0m
+[3.002s] [ 71%] [32mBuilding CXX object CMakeFiles/tutorial_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tutorial_interfaces/srv/detail/add_three_ints__type_support_c.cpp.o[0m
+[3.430s] [ 74%] [32m[1mLinking CXX shared library libtutorial_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[3.507s] [ 74%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_c
+[3.515s] [35m[1mScanning dependencies of target tutorial_interfaces[0m
+[3.524s] [ 74%] Built target tutorial_interfaces
+[3.532s] [35m[1mScanning dependencies of target tutorial_interfaces__py[0m
+[3.541s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.933s] [ 76%] Built target tutorial_interfaces__py
+[3.941s] [35m[1mScanning dependencies of target tutorial_interfaces__python[0m
+[3.961s] [ 82%] [32mBuilding C object CMakeFiles/tutorial_interfaces__python.dir/rosidl_generator_py/tutorial_interfaces/msg/_num_s.c.o[0m
+[3.961s] [ 82%] [32mBuilding C object CMakeFiles/tutorial_interfaces__python.dir/rosidl_generator_py/tutorial_interfaces/srv/_add_three_ints_s.c.o[0m
+[4.071s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/tutorial_interfaces/libtutorial_interfaces__python.so[0m
+[4.101s] [ 84%] Built target tutorial_interfaces__python
+[4.115s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_c__pyext[0m
+[4.117s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[4.123s] [35m[1mScanning dependencies of target tutorial_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[4.133s] [ 87%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tutorial_interfaces/_tutorial_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.137s] [ 89%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tutorial_interfaces/_tutorial_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[4.143s] [ 92%] [32mBuilding C object CMakeFiles/tutorial_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tutorial_interfaces/_tutorial_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.244s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[4.244s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[4.253s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/tutorial_interfaces/tutorial_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[4.282s] [100%] Built target tutorial_interfaces__rosidl_typesupport_introspection_c__pyext
+[4.282s] [100%] Built target tutorial_interfaces__rosidl_typesupport_c__pyext
+[4.315s] [100%] Built target tutorial_interfaces__rosidl_typesupport_fastrtps_c__pyext

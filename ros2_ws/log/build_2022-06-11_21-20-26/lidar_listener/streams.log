@@ -1,0 +1,33 @@
+[0.025s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[0.052s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.081s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.268s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.283s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.286s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.383s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.553s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.581s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.582s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.689s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.747s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.748s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.748s] -- Configured cppcheck include dirs: 
+[0.748s] -- Configured cppcheck exclude dirs and/or files: 
+[0.748s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.748s] -- Configured cpplint exclude dirs and/or files: 
+[0.749s] -- Added test 'lint_cmake' to check CMake code style
+[0.749s] -- Added test 'uncrustify' to check C / C++ code style
+[0.750s] -- Configured uncrustify additional arguments: 
+[0.750s] -- Added test 'xmllint' to check XML markup files
+[0.752s] -- Configuring done
+[0.758s] -- Generating done
+[0.759s] -- Build files have been written to: /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener
+[0.784s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[0.860s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Kstd_msgs/msg/laser_scan.hpp: No such file or directory
+[0.860s]     2 | #include [01;31m[K"std_msgs/msg/laser_scan.hpp"[m[K
+[0.860s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.860s] compilation terminated.
+[0.863s] make[2]: *** [CMakeFiles/listener.dir/build.make:63: CMakeFiles/listener.dir/src/main.cpp.o] Error 1
+[0.863s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/listener.dir/all] Error 2
+[0.863s] make: *** [Makefile:141: all] Error 2
+[0.865s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8

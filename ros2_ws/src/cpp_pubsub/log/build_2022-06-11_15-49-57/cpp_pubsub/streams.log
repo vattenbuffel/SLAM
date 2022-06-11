@@ -1,0 +1,21 @@
+[0.009s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub/install/cpp_pubsub
+[0.021s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.039s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.183s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.208s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.211s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.300s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.340s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.342s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.461s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.516s] CMake Error at /opt/ros/foxy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+[0.517s]   ament_target_dependencies() the passed package name 'rclpp' was not found
+[0.517s]   before
+[0.517s] Call Stack (most recent call first):
+[0.517s]   CMakeLists.txt:42 (ament_target_dependencies)
+[0.517s] 
+[0.517s] 
+[0.518s] -- Configuring incomplete, errors occurred!
+[0.518s] See also "/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub/build/cpp_pubsub/CMakeFiles/CMakeOutput.log".
+[0.518s] See also "/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub/build/cpp_pubsub/CMakeFiles/CMakeError.log".
+[0.522s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub/build/cpp_pubsub' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub/install/cpp_pubsub

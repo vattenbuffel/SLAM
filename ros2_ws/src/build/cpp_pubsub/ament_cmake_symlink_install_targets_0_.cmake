@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub/talker" "/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub/listener" "TARGETS" "talker" "listener" "DESTINATION" "lib/cpp_pubsub")

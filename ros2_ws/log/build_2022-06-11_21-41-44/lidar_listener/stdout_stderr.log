@@ -1,0 +1,13 @@
+[35m[1mScanning dependencies of target listener[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:[m[K In member function ‘[01m[Kvoid Listener::topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’:
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+   14 |    for(int i = 0; [01;35m[Ki < sizeof(scan->ranges)/sizeof(scan->ranges[0])[m[K; i++){
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:15:36:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+   15 |     printf[34m[K([m[K"i: %f", scan->ranges[i][01;31m[K;[m[K
+      |           [34m[K~[m[K                        [01;31m[K^[m[K
+      |                                    [32m[K)[m[K
+make[2]: *** [CMakeFiles/listener.dir/build.make:63: CMakeFiles/listener.dir/src/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/listener.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

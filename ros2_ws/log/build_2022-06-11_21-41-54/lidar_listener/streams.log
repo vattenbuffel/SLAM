@@ -1,0 +1,30 @@
+[0.023s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[0.062s] [35m[1mScanning dependencies of target listener[0m
+[0.103s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[1.089s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:[m[K In member function ‘[01m[Kvoid Listener::topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’:
+[1.089s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[1.089s]    14 |    for(int i = 0; [01;35m[Ki < sizeof(scan->ranges)/sizeof(scan->ranges[0])[m[K; i++){
+[1.089s]       |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.649s] [100%] [32m[1mLinking CXX executable listener[0m
+[3.837s] [100%] Built target listener
+[3.845s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[3.863s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener
+[3.871s] -- Install configuration: ""
+[3.871s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/lib/lidar_listener/listener
+[3.873s] -- Set runtime path of "/home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/lib/lidar_listener/listener" to ""
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/ament_index/resource_index/package_run_dependencies/lidar_listener
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/ament_index/resource_index/parent_prefix_path/lidar_listener
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/ament_prefix_path.sh
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/ament_prefix_path.dsv
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/path.sh
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/environment/path.dsv
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.bash
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.sh
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.zsh
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/local_setup.dsv
+[3.873s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.dsv
+[3.873s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/ament_index/resource_index/packages/lidar_listener
+[3.874s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/cmake/lidar_listenerConfig.cmake
+[3.874s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/cmake/lidar_listenerConfig-version.cmake
+[3.874s] -- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/lidar_listener/share/lidar_listener/package.xml
+[3.876s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener

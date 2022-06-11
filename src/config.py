@@ -1,7 +1,7 @@
 headless = False
 
-mqtt_broker = "192.168.1.11"
-# mqtt_broker = "192.168.1.5"
+#mqtt_broker = "192.168.1.11"
+mqtt_broker = "192.168.1.5"
 map_size_m = 15
 map_size_pixels = 250
 map_pub_freq_hz = 1
@@ -13,7 +13,7 @@ vehicle_wheel_r_cm = 5.1
 vehicle_enc_per_rot = 1248
 
 # Simulator
-sim = True
+sim = False
 width = 1000
 height = 1000
 sim_scale = 0.5

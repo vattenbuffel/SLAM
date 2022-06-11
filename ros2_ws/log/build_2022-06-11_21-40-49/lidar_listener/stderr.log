@@ -1,0 +1,15 @@
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:[m[K In member function ‘[01m[Kvoid Listener::topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’:
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:59:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K)[m[K’ token
+   14 |    for(int i = 0; i < sizeof(scan->ranges)/scan->ranges[0][01;31m[K)[m[K; i++{
+      |                                                           [01;31m[K^[m[K
+      |                                                           [32m[K;[m[K
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:4:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kfor[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+   14 |    [01;35m[Kfor[m[K(int i = 0; i < sizeof(scan->ranges)/scan->ranges[0]); i++{
+      |    [01;35m[K^~~[m[K
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:62:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kfor[m[K’
+   14 |    for(int i = 0; i < sizeof(scan->ranges)/scan->ranges[0]); [01;36m[Ki[m[K++{
+      |                                                              [01;36m[K^[m[K
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:62:[m[K [01;31m[Kerror: [m[K‘[01m[Ki[m[K’ was not declared in this scope
+make[2]: *** [CMakeFiles/listener.dir/build.make:63: CMakeFiles/listener.dir/src/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/listener.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

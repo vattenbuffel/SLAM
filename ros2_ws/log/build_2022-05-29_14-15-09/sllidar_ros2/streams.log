@@ -1,0 +1,62 @@
+[0.009s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2 -- -j8 -l8
+[0.042s] [35m[1mScanning dependencies of target sllidar_node[0m
+[0.055s] [ 14%] Built target sllidar_client
+[0.063s] [ 21%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/src/sllidar_node.cpp.o[0m
+[0.960s] In file included from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:36[m[K,
+[0.960s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[0.960s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+[0.960s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[0.960s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:58:16:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[0.960s]    58 |     sl_u8 data[[01;35m[K0[m[K];
+[0.960s]       |                [01;35m[K^[m[K
+[0.960s] In file included from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[0.960s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+[0.960s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[0.960s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:295:20:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[0.961s]   295 |     sl_u8  payload[[01;35m[K0[m[K];
+[0.961s]       |                    [01;35m[K^[m[K
+[1.676s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:[m[K In member function ‘[01m[Kbool SLlidarNode::checkSLLIDARHealth(sl::ILidarDriver*)[m[K’:
+[1.676s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:147:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+[1.677s]   147 |     [01;35m[K}[m[K
+[1.677s]       |     [01;35m[K^[m[K
+[2.543s] [ 28%] [32m[1mLinking CXX executable sllidar_node[0m
+[2.695s] [100%] Built target sllidar_node
+[2.703s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2 -- -j8 -l8
+[2.740s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2
+[2.746s] -- Install configuration: ""
+[2.747s] -- Execute custom install script
+[2.747s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py
+[2.747s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_launch.py
+[2.747s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py
+[2.748s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py
+[2.749s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py
+[2.749s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py
+[2.749s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py
+[2.749s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz
+[2.749s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node
+[2.750s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client
+[2.750s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2
+[2.750s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2
+[2.750s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh
+[2.750s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv
+[2.751s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh
+[2.751s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv
+[2.751s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash
+[2.751s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh
+[2.751s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh
+[2.752s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv
+[2.752s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv
+[2.759s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2
+[2.759s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.759s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.759s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake
+[2.759s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake
+[2.759s] -- Up-to-date symlink: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.xml
+[2.762s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2

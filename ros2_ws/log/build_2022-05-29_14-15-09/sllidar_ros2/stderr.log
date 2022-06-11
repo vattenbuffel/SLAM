@@ -1,0 +1,17 @@
+In file included from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:36[m[K,
+                 from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+                 from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+                 from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:58:16:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+   58 |     sl_u8 data[[01;35m[K0[m[K];
+      |                [01;35m[K^[m[K
+In file included from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+                 from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+                 from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:295:20:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+  295 |     sl_u8  payload[[01;35m[K0[m[K];
+      |                    [01;35m[K^[m[K
+[01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:[m[K In member function ‘[01m[Kbool SLlidarNode::checkSLLIDARHealth(sl::ILidarDriver*)[m[K’:
+[01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:147:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+  147 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K

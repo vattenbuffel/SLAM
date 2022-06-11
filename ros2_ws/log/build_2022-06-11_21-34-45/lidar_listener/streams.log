@@ -1,0 +1,14 @@
+[0.025s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[0.063s] [35m[1mScanning dependencies of target listener[0m
+[0.099s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[1.342s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:[m[K In member function ‘[01m[Kvoid Listener::topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’:
+[1.342s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:12:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kscan_time[m[K’
+[1.342s]    12 |    int count = scan.[01;31m[Kscan_time[m[K/scan.time_increment;
+[1.342s]       |                     [01;31m[K^~~~~~~~~[m[K
+[1.342s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:12:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Ktime_increment[m[K’
+[1.342s]    12 |    int count = scan.scan_time/scan.[01;31m[Ktime_increment[m[K;
+[1.343s]       |                                    [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.387s] make[2]: *** [CMakeFiles/listener.dir/build.make:63: CMakeFiles/listener.dir/src/main.cpp.o] Error 1
+[2.387s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/listener.dir/all] Error 2
+[2.388s] make: *** [Makefile:141: all] Error 2
+[2.389s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8

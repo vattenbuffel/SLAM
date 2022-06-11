@@ -1,0 +1,6 @@
+[ 14%] Built target sllidar_client
+[100%] Built target sllidar_node
+-- Install configuration: ""
+-- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch
+-- Up-to-date: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/rviz
+-- Installing: /home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv

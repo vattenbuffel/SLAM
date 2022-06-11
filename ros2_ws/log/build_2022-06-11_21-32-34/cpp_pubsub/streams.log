@@ -1,0 +1,8 @@
+[0.023s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub -- -j8 -l8
+[0.102s] [ 50%] Built target listener
+[0.113s] [100%] Built target talker
+[0.125s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub -- -j8 -l8
+[0.159s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub
+[0.171s] -- Install configuration: ""
+[0.171s] -- Installing: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub/share/cpp_pubsub/package.dsv
+[0.173s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub

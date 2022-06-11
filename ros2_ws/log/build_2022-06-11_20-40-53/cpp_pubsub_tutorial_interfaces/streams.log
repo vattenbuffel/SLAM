@@ -1,0 +1,55 @@
+[0.009s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub_tutorial_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces
+[0.020s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.036s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.188s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.194s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.219s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.222s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.312s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.351s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.352s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.465s] -- Found tutorial_interfaces: 0.0.0 (/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces/share/tutorial_interfaces/cmake)
+[0.470s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.531s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.539s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.539s] -- Configured cppcheck include dirs: 
+[0.539s] -- Configured cppcheck exclude dirs and/or files: 
+[0.546s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.546s] -- Configured cpplint exclude dirs and/or files: 
+[0.547s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.549s] -- Added test 'lint_cmake' to check CMake code style
+[0.550s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.557s] -- Added test 'uncrustify' to check C / C++ code style
+[0.558s] -- Configured uncrustify additional arguments: 
+[0.559s] -- Added test 'xmllint' to check XML markup files
+[0.561s] -- Configuring done
+[0.569s] -- Generating done
+[0.570s] -- Build files have been written to: /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces
+[0.575s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub_tutorial_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces
+[0.576s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces -- -j8 -l8
+[0.621s] [ 50%] [32m[1mLinking CXX executable listener[0m
+[0.621s] [ 50%] [32m[1mLinking CXX executable talker[0m
+[0.759s] [ 75%] Built target talker
+[0.817s] [100%] Built target listener
+[0.825s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces -- -j8 -l8
+[0.845s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces
+[0.851s] -- Install configuration: ""
+[0.851s] -- Execute custom install script
+[0.852s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib/cpp_pubsub_tutorial_interfaces/talker
+[0.859s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/lib/cpp_pubsub_tutorial_interfaces/listener
+[0.867s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/ament_index/resource_index/package_run_dependencies/cpp_pubsub_tutorial_interfaces
+[0.874s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/ament_index/resource_index/parent_prefix_path/cpp_pubsub_tutorial_interfaces
+[0.882s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/environment/ament_prefix_path.sh
+[0.889s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/environment/ament_prefix_path.dsv
+[0.895s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/environment/path.sh
+[0.902s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/environment/path.dsv
+[0.909s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/local_setup.bash
+[0.915s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/local_setup.sh
+[0.921s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/local_setup.zsh
+[0.928s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/local_setup.dsv
+[0.935s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.dsv
+[0.941s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/ament_index/resource_index/packages/cpp_pubsub_tutorial_interfaces
+[0.948s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/cmake/cpp_pubsub_tutorial_interfacesConfig.cmake
+[0.955s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/cmake/cpp_pubsub_tutorial_interfacesConfig-version.cmake
+[0.961s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces/share/cpp_pubsub_tutorial_interfaces/package.xml
+[0.970s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces

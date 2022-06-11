@@ -1,0 +1,9 @@
+[0.010s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces': CMAKE_PREFIX_PATH=/home/noa/Documents/SLAM/ros2_ws/install/tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub_tutorial_interfaces:/home/noa/Documents/SLAM/ros2_ws/install/sllidar_ros2:/home/noa/Documents/SLAM/ros2_ws/install/cpp_pubsub:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/cpp_pubsub_tutorial_interfaces -- -j8 -l8
+[0.040s] [35m[1mScanning dependencies of target listener[0m
+[0.040s] [35m[1mScanning dependencies of target talker[0m
+[0.069s] [ 25%] [32mBuilding CXX object CMakeFiles/talker.dir/src/publisher_member_function.cpp.o[0m
+[0.069s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/subscriber_member_function.cpp.o[0m
+[2.323s] [ 75%] [32m[1mLinking CXX executable talker[0m
+[2.453s] [ 75%] Built target talker
+[3.587s] [100%] [32m[1mLinking CXX executable listener[0m
+[3.765s] [100%] Built target listener

@@ -1,0 +1,4 @@
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:[m[K In member function ‘[01m[Kvoid Listener::topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’:
+[01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:11:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kscan[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   11 |   void topic_callback([01;35m[Ksensor_msgs::msg::LaserScan::SharedPtr scan[m[K) const{
+      |                       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K

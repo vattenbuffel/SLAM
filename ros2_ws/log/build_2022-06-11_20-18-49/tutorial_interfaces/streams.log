@@ -1,0 +1,5 @@
+[0.010s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8
+[0.026s] CMake Error: The source directory "/home/noa/Documents/SLAM/ros2_ws/tutorial_interfaces" does not exist.
+[0.027s] Specify --help for usage, or press the help button on the CMake GUI.
+[0.027s] make: *** [Makefile:222: cmake_check_build_system] Error 1
+[0.028s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/tutorial_interfaces -- -j8 -l8

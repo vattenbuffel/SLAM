@@ -1,0 +1,30 @@
+[0.010s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2 -- -j8 -l8
+[0.042s] [35m[1mScanning dependencies of target sllidar_node[0m
+[0.055s] [ 14%] Built target sllidar_client
+[0.063s] [ 21%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/src/sllidar_node.cpp.o[0m
+[0.968s] In file included from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:36[m[K,
+[0.968s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[0.968s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+[0.968s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[0.968s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:58:16:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[0.968s]    58 |     sl_u8 data[[01;35m[K0[m[K];
+[0.968s]       |                [01;35m[K^[m[K
+[0.969s] In file included from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[0.969s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+[0.969s]                  from [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[0.969s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:295:20:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[0.969s]   295 |     sl_u8  payload[[01;35m[K0[m[K];
+[0.969s]       |                    [01;35m[K^[m[K
+[1.010s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[1.010s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:472:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint[m[K’ was not declared in this scope; did you mean ‘[01m[Kprintf[m[K’?
+[1.010s]   472 |  [01;31m[Kprint[m[K("start\n");
+[1.010s]       |  [01;31m[K^~~~~[m[K
+[1.010s]       |  [32m[Kprintf[m[K
+[1.687s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:[m[K In member function ‘[01m[Kbool SLlidarNode::checkSLLIDARHealth(sl::ILidarDriver*)[m[K’:
+[1.687s] [01m[K/home/noa/Documents/SLAM/ros2_ws/sllidar_ros2/src/sllidar_node.cpp:147:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+[1.687s]   147 |     [01;35m[K}[m[K
+[1.688s]       |     [01;35m[K^[m[K
+[1.716s] make[2]: *** [CMakeFiles/sllidar_node.dir/build.make:63: CMakeFiles/sllidar_node.dir/src/sllidar_node.cpp.o] Error 1
+[1.717s] make[1]: *** [CMakeFiles/Makefile2:80: CMakeFiles/sllidar_node.dir/all] Error 2
+[1.717s] make: *** [Makefile:141: all] Error 2
+[1.718s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/sllidar_ros2 -- -j8 -l8

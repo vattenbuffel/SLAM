@@ -1,0 +1,84 @@
+[0.019s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub
+[0.076s] -- The C compiler identification is GNU 9.4.0
+[0.139s] -- The CXX compiler identification is GNU 9.4.0
+[0.144s] -- Check for working C compiler: /usr/bin/cc
+[0.220s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.221s] -- Detecting C compiler ABI info
+[0.309s] -- Detecting C compiler ABI info - done
+[0.321s] -- Detecting C compile features
+[0.322s] -- Detecting C compile features - done
+[0.325s] -- Check for working CXX compiler: /usr/bin/c++
+[0.413s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.414s] -- Detecting CXX compiler ABI info
+[0.526s] -- Detecting CXX compiler ABI info - done
+[0.544s] -- Detecting CXX compile features
+[0.545s] -- Detecting CXX compile features - done
+[0.548s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.580s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.581s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.731s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.754s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.793s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.800s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.873s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.906s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.998s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.068s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.070s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.071s] -- Looking for pthread.h
+[1.142s] -- Looking for pthread.h - found
+[1.143s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.230s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.230s] -- Looking for pthread_create in pthreads
+[1.299s] -- Looking for pthread_create in pthreads - not found
+[1.299s] -- Looking for pthread_create in pthread
+[1.428s] -- Looking for pthread_create in pthread - found
+[1.428s] -- Found Threads: TRUE  
+[1.722s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.915s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.945s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.945s] -- Configured cppcheck include dirs: 
+[1.945s] -- Configured cppcheck exclude dirs and/or files: 
+[1.974s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.974s] -- Configured cpplint exclude dirs and/or files: 
+[1.976s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.980s] -- Added test 'lint_cmake' to check CMake code style
+[1.982s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[2.024s] -- Added test 'uncrustify' to check C / C++ code style
+[2.024s] -- Configured uncrustify additional arguments: 
+[2.025s] -- Added test 'xmllint' to check XML markup files
+[2.030s] -- Configuring done
+[2.059s] -- Generating done
+[2.061s] -- Build files have been written to: /home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub
+[2.073s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake /home/noa/Documents/SLAM/ros2_ws/src/cpp_pubsub -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub
+[2.074s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub -- -j8 -l8
+[2.225s] [35m[1mScanning dependencies of target talker[0m
+[2.245s] [35m[1mScanning dependencies of target listener[0m
+[2.311s] [ 25%] [32mBuilding CXX object CMakeFiles/talker.dir/src/publisher_member_function.cpp.o[0m
+[2.382s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/subscriber_member_function.cpp.o[0m
+[7.126s] [ 75%] [32m[1mLinking CXX executable talker[0m
+[7.392s] [ 75%] Built target talker
+[8.985s] [100%] [32m[1mLinking CXX executable listener[0m
+[9.210s] [100%] Built target listener
+[9.222s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub -- -j8 -l8
+[9.251s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub
+[9.260s] -- Install configuration: ""
+[9.261s] -- Execute custom install script
+[9.261s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/lib/cpp_pubsub/talker
+[9.272s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/lib/cpp_pubsub/listener
+[9.279s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/ament_index/resource_index/package_run_dependencies/cpp_pubsub
+[9.287s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/ament_index/resource_index/parent_prefix_path/cpp_pubsub
+[9.295s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/environment/ament_prefix_path.sh
+[9.302s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/environment/ament_prefix_path.dsv
+[9.310s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/environment/path.sh
+[9.318s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/environment/path.dsv
+[9.325s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/local_setup.bash
+[9.332s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/local_setup.sh
+[9.341s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/local_setup.zsh
+[9.350s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/local_setup.dsv
+[9.360s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/package.dsv
+[9.370s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/ament_index/resource_index/packages/cpp_pubsub
+[9.379s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/cmake/cpp_pubsubConfig.cmake
+[9.387s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/cmake/cpp_pubsubConfig-version.cmake
+[9.394s] -- Symlinking: /home/noa/Documents/SLAM/ros2_ws/src/install/cpp_pubsub/share/cpp_pubsub/package.xml
+[9.405s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --install /home/noa/Documents/SLAM/ros2_ws/src/build/cpp_pubsub

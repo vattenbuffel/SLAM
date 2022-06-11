@@ -1,0 +1,11 @@
+[0.025s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[0.056s] [35m[1mScanning dependencies of target listener[0m
+[0.064s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[0.072s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+[0.072s]     1 | #include [01;31m[K"rclcpp/rclcpp.hpp"[m[K
+[0.072s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.072s] compilation terminated.
+[0.073s] make[2]: *** [CMakeFiles/listener.dir/build.make:63: CMakeFiles/listener.dir/src/main.cpp.o] Error 1
+[0.073s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/listener.dir/all] Error 2
+[0.073s] make: *** [Makefile:141: all] Error 2
+[0.075s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8

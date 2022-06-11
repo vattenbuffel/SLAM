@@ -1,0 +1,15 @@
+[0.023s] Invoking command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
+[0.054s] [35m[1mScanning dependencies of target listener[0m
+[0.094s] [ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/main.cpp.o[0m
+[1.127s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:[m[K In member function ‘[01m[Kvoid Listener::topic_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’:
+[1.127s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:14:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[1.127s]    14 |    for(int i = 0; [01;35m[Ki < sizeof(scan->ranges)/sizeof(scan->ranges[0])[m[K; i++){
+[1.127s]       |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.127s] [01m[K/home/noa/Documents/SLAM/ros2_ws/src/lidar_listener/src/main.cpp:15:36:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+[1.127s]    15 |     printf[34m[K([m[K"i: %f", scan->ranges[i][01;31m[K;[m[K
+[1.128s]       |           [34m[K~[m[K                        [01;31m[K^[m[K
+[1.128s]       |                                    [32m[K)[m[K
+[2.195s] make[2]: *** [CMakeFiles/listener.dir/build.make:63: CMakeFiles/listener.dir/src/main.cpp.o] Error 1
+[2.195s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/listener.dir/all] Error 2
+[2.195s] make: *** [Makefile:141: all] Error 2
+[2.196s] Invoked command in '/home/noa/Documents/SLAM/ros2_ws/build/lidar_listener' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy PS1=\u@\h \[\033[32m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ /usr/bin/cmake --build /home/noa/Documents/SLAM/ros2_ws/build/lidar_listener -- -j8 -l8
